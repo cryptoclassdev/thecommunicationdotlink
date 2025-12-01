@@ -1,3 +1,5 @@
+"use client"
+
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
 import { Services } from "@/components/services"
@@ -5,6 +7,14 @@ import { Work } from "@/components/work"
 import { Footer } from "@/components/footer"
 
 export default function Home() {
+  const handleScheduleCall = () => {
+    if (typeof window !== "undefined" && (window as any).Calendly) {
+      ;(window as any).Calendly.initPopupWidget({
+        url: "https://calendly.com/seb-thecommunication/30min",
+      })
+    }
+  }
+
   return (
     <main className="min-h-screen bg-white text-black selection:bg-blue-500/20">
       <Navbar />
@@ -22,8 +32,11 @@ export default function Home() {
           <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto">
             Let's collaborate to build something extraordinary. Your vision, our expertise.
           </p>
-          <button className="px-10 py-5 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)]">
-            Start a Project
+          <button
+            onClick={handleScheduleCall}
+            className="px-10 py-5 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)]"
+          >
+            Schedule a call
           </button>
         </div>
 
