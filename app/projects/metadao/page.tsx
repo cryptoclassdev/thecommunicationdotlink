@@ -11,10 +11,18 @@ export default function MetaDAOProject() {
     const script = document.createElement("script")
     script.src = "https://platform.twitter.com/widgets.js"
     script.async = true
+    script.onload = () => {
+      // Trigger Twitter to process the embedded tweets after script loads
+      if ((window as any).twttr?.widgets) {
+        ;(window as any).twttr.widgets.load()
+      }
+    }
     document.body.appendChild(script)
 
     return () => {
-      document.body.removeChild(script)
+      if (document.body.contains(script)) {
+        document.body.removeChild(script)
+      }
     }
   }, [])
 
