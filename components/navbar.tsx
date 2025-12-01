@@ -56,7 +56,7 @@ export function Navbar() {
         )}
       >
         <Link href="/" className="text-2xl font-bold tracking-tighter relative z-50 text-black">
-          communication<span className="text-blue-600">.</span>link
+          thecommunication<span className="text-blue-600">.</span>link
         </Link>
 
         {/* Desktop Menu */}
