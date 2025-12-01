@@ -12,7 +12,7 @@ export function Footer() {
               thecommunication<span className="text-blue-600">.</span>link
             </Link>
             <p className="text-black/50 leading-relaxed">
-              Crafting digital experiences that merge art, technology, and human connection.
+              Your product is powerful. We make it understood, remembered, and adopted.
             </p>
           </div>
 

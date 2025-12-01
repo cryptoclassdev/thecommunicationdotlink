@@ -47,8 +47,7 @@ export function Hero() {
           transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
           className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto mb-12 leading-relaxed"
         >
-          We transform complex ideas into fluid, intuitive digital experiences. Blending art, technology, and strategy
-          to shape the future.
+          Your product is powerful. We make it understood, remembered, and adopted.
         </motion.p>
 
         <motion.div
