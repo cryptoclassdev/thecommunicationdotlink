@@ -11,12 +11,7 @@ export default function MetaDAOProject() {
     const script = document.createElement("script")
     script.src = "https://platform.twitter.com/widgets.js"
     script.async = true
-    script.onload = () => {
-      // Trigger Twitter to process the embedded tweets after script loads
-      if ((window as any).twttr?.widgets) {
-        ;(window as any).twttr.widgets.load()
-      }
-    }
+    script.charset = "utf-8"
     document.body.appendChild(script)
 
     return () => {
@@ -25,15 +20,6 @@ export default function MetaDAOProject() {
       }
     }
   }, [])
-
-  const tweets = [
-    "https://x.com/MetaDAOProject/status/1983975628803051689",
-    "https://x.com/MetaDAOProject/status/1981442070062694695",
-    "https://x.com/MetaDAOProject/status/1978906017812369891",
-    "https://x.com/MetaDAOProject/status/1976364501088796746",
-    "https://x.com/MetaDAOProject/status/1973826339435393470",
-    "https://x.com/MetaDAOProject/status/1971645084736045448",
-  ]
 
   return (
     <div className="min-h-screen bg-white">
@@ -126,29 +112,77 @@ export default function MetaDAOProject() {
             </p>
           </motion.div>
 
-          {/* Masonry-style Tweet Grid */}
-          <div className="max-w-6xl mx-auto">
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {tweets.map((tweetUrl, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, margin: "-50px" }}
-                  transition={{ delay: index * 0.1 }}
-                  className={`
-                    ${index === 0 ? "lg:col-span-2" : ""}
-                    ${index === 3 ? "lg:col-span-2" : ""}
-                  `}
-                >
-                  <div className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300">
-                    <blockquote className="twitter-tweet" data-theme="light" data-dnt="true">
-                      <a href={tweetUrl}>Loading tweet...</a>
-                    </blockquote>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  Living in the Futarchy <a href="https://t.co/nTJCPR3uiI">pic.twitter.com/nTJCPR3uiI</a>
+                </p>
+                &mdash; MetaDAO (@MetaDAOProject){" "}
+                <a href="https://twitter.com/MetaDAOProject/status/1983975628803051689?ref_src=twsrc%5Etfw">
+                  October 30, 2025
+                </a>
+              </blockquote>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.1 }}
+              className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  The Halloween Special <a href="https://t.co/T3xLpyGqmP">pic.twitter.com/T3xLpyGqmP</a>
+                </p>
+                &mdash; MetaDAO (@MetaDAOProject){" "}
+                <a href="https://twitter.com/MetaDAOProject/status/1981442070062694695?ref_src=twsrc%5Etfw">
+                  October 23, 2025
+                </a>
+              </blockquote>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2 }}
+              className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  Being a Celebrity <a href="https://t.co/AogqNkSQeL">pic.twitter.com/AogqNkSQeL</a>
+                </p>
+                &mdash; MetaDAO (@MetaDAOProject){" "}
+                <a href="https://twitter.com/MetaDAOProject/status/1978906017812369891?ref_src=twsrc%5Etfw">
+                  October 16, 2025
+                </a>
+              </blockquote>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.3 }}
+              className="bg-white rounded-2xl border border-black/10 p-6 shadow-sm hover:shadow-lg transition-shadow duration-300"
+            >
+              <blockquote className="twitter-tweet">
+                <p lang="en" dir="ltr">
+                  The Trading Bot <a href="https://t.co/pMly1dZsmO">pic.twitter.com/pMly1dZsmO</a>
+                </p>
+                &mdash; MetaDAO (@MetaDAOProject){" "}
+                <a href="https://twitter.com/MetaDAOProject/status/1976364501088796746?ref_src=twsrc%5Etfw">
+                  October 9, 2025
+                </a>
+              </blockquote>
+            </motion.div>
           </div>
         </div>
       </section>

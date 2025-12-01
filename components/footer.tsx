@@ -9,7 +9,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mb-20">
           <div>
             <Link href="/" className="text-2xl font-bold tracking-tighter mb-6 block text-black">
-              communication<span className="text-blue-600">.</span>link
+              thecommunication<span className="text-blue-600">.</span>link
             </Link>
             <p className="text-black/50 leading-relaxed">
               Crafting digital experiences that merge art, technology, and human connection.
@@ -46,13 +46,13 @@ export function Footer() {
             <h4 className="font-semibold mb-6">Let's Chat</h4>
             <p className="text-black/60 mb-4">Have a project in mind?</p>
             <a href="mailto:hello@lumina.agency" className="text-xl font-medium hover:text-blue-600 transition-colors">
-              hello@communication.link
+              hello@thecommunication.link
             </a>
           </div>
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/5 text-sm text-black/40">
-          <p>&copy; 2025 communication.link. All rights reserved.</p>
+          <p>&copy; 2025 thecommunication.link. All rights reserved.</p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-black transition-colors">
               Privacy Policy
