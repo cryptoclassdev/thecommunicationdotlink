@@ -116,6 +116,9 @@
 
   --animate-blob: blob 7s infinite;
   --animate-float: float 6s ease-in-out infinite;
+  /* Added marquee animations for brand carousel */
+  --animate-marquee: marquee var(--duration) linear infinite;
+  --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
 
   @keyframes blob {
     0% {
@@ -141,6 +144,25 @@
     }
     100% {
       transform: translateY(0px);
+    }
+  }
+
+  /* Marquee keyframes for smooth infinite scrolling */
+  @keyframes marquee {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(-100% - var(--gap)));
+    }
+  }
+
+  @keyframes marquee-vertical {
+    from {
+      transform: translateY(0);
+    }
+    to {
+      transform: translateY(calc(-100% - var(--gap)));
     }
   }
 }
