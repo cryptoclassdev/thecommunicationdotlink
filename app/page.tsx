@@ -2,6 +2,7 @@
 
 import { Navbar } from "@/components/navbar"
 import { Hero } from "@/components/hero"
+import { BrandMarquee } from "@/components/brand-marquee"
 import { Services } from "@/components/services"
 import { Work } from "@/components/work"
 import { Footer } from "@/components/footer"
@@ -19,6 +20,7 @@ export default function Home() {
     <main className="min-h-screen bg-white text-black selection:bg-blue-500/20">
       <Navbar />
       <Hero />
+      <BrandMarquee />
       <Services />
       <Work />
 
