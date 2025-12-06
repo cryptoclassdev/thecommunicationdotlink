@@ -21,8 +21,8 @@ export default function Home() {
       <Navbar />
       <Hero />
       <BrandMarquee />
-      <Services />
       <Work />
+      <Services />
 
       {/* Call to Action Section */}
       <section id="contact" className="py-32 relative">
