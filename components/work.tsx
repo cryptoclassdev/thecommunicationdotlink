@@ -2,32 +2,80 @@
 
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
-import Image from "next/image"
 import Link from "next/link"
+import { useRef } from "react"
 
 const projects = [
   {
     title: "MetaDAO",
-    category: "Content and Marketing",
-    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764588072/meta-thumb_xlcnb2.jpg",
+    category: "Explainers, Animations, New Project Coverage",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
     color: "from-[#FF4949]/20 to-[#FF6B6B]/20",
     slug: "metadao",
   },
   {
-    title: "Jupiter",
-    category: "Content and Marketing",
-    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764588447/jup-thumb_vwnqbt.jpg",
+    title: "Meteora",
+    category: "Explainers, New User Onbaording",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765011323/met-thumb_aqjzdj.mp4",
     color: "from-[#00C2D1]/20 to-[#A4E86C]/20",
-    slug: "jupiter",
+    slug: "meteora",
   },
   {
-    title: "Fogees Hub",
-    category: "Education Hub for FOGO Ecosystem",
-    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764589306/fogees-thumb_zunuz4.jpg",
+    title: "ZCASH",
+    category: "Animations",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
     color: "from-[#D8185A]/20 to-[#FF6A2C]/20",
-    slug: "fogees-hub",
+    slug: "zcash",
+  },
+  {
+    title: "Solana Mobile",
+    category: "Product Review",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
+    color: "from-[#D8185A]/20 to-[#FF6A2C]/20",
+    slug: "solana-mobile",
   },
 ]
+
+function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+  const playPromiseRef = useRef<Promise<void> | null>(null)
+
+  const handleMouseEnter = async () => {
+    if (videoRef.current) {
+      playPromiseRef.current = videoRef.current.play()
+      try {
+        await playPromiseRef.current
+      } catch (error) {
+        // Ignore AbortError that occurs when play is interrupted
+      }
+    }
+  }
+
+  const handleMouseLeave = async () => {
+    if (videoRef.current && playPromiseRef.current) {
+      try {
+        await playPromiseRef.current
+        videoRef.current.pause()
+      } catch (error) {
+        // Ignore any errors
+      }
+    }
+  }
+
+  return (
+    <div className="relative h-[400px] overflow-hidden" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+      <video
+        ref={videoRef}
+        src={project.video}
+        muted
+        loop
+        playsInline
+        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+      />
+      <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
+    </div>
+  )
+}
 
 export function Work() {
   return (
@@ -35,35 +83,15 @@ export function Work() {
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-100/40 rounded-full blur-[150px] pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-20 gap-8">
-          <div>
-            <motion.h2
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="text-4xl md:text-6xl font-bold mb-6"
-            >
-              Our Work
-            </motion.h2>
-            <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.1 }}
-              className="text-xl text-black/60 max-w-md"
-            >
-              A showcase of our most recent digital transformations.
-            </motion.p>
-          </div>
-          <motion.button
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            className="px-6 py-3 rounded-full border border-black/20 hover:bg-black/5 transition-colors text-sm font-medium"
-          >
-            View All Projects
-          </motion.button>
-        </div>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="text-center mb-16"
+        >
+          <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Our Work</h2>
+          <p className="mt-4 text-muted-foreground">A showcase of our most recent digital transformations</p>
+        </motion.div>
 
         <div className="space-y-20">
           {projects.map((project, index) => (
@@ -97,15 +125,7 @@ export function Work() {
                         </div>
                       </div>
                     </div>
-                    <div className="relative h-[400px] md:h-auto overflow-hidden">
-                      <Image
-                        src={project.image || "/placeholder.svg"}
-                        alt={project.title}
-                        fill
-                        className="object-cover transition-transform duration-700 group-hover:scale-110"
-                      />
-                      <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
-                    </div>
+                    <ProjectMedia project={project} />
                   </div>
                 </GlassCard>
               </Link>
