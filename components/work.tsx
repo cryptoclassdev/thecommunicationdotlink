@@ -2,7 +2,6 @@
 
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
-import Link from "next/link"
 import { useRef } from "react"
 
 const projects = [
@@ -10,6 +9,7 @@ const projects = [
     title: "MetaDAO",
     category: "Explainers, Animations, New Project Coverage",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
+    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.jpg",
     color: "from-[#FF4949]/20 to-[#FF6B6B]/20",
     slug: "metadao",
   },
@@ -17,6 +17,7 @@ const projects = [
     title: "Meteora",
     category: "Explainers, New User Onbaording",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765011323/met-thumb_aqjzdj.mp4",
+    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765011323/met-thumb_aqjzdj.jpg",
     color: "from-[#FF5722]/20 to-[#9C27B0]/20",
     slug: "meteora",
   },
@@ -24,6 +25,7 @@ const projects = [
     title: "ZCASH",
     category: "Animations",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
+    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
     color: "from-[#F9A825]/20 to-[#FFEB3B]/20",
     slug: "zcash",
   },
@@ -31,6 +33,7 @@ const projects = [
     title: "Solana Mobile",
     category: "Product Review",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
+    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.jpg",
     color: "from-[#00B8B8]/20 to-[#9B4BFF]/20",
     slug: "solana-mobile",
   },
@@ -67,6 +70,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
       <video
         ref={videoRef}
         src={project.video}
+        poster={project.poster}
         muted
         loop
         playsInline
@@ -102,33 +106,31 @@ export function Work() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <Link href={`/projects/${project.slug}`}>
-                <GlassCard className="p-0 overflow-hidden group cursor-pointer">
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                      />
-                      <div className="relative z-10">
-                        <span className="text-sm font-medium text-black/50 mb-4 block uppercase tracking-wider">
-                          {project.category}
-                        </span>
-                        <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                          {project.title}
-                        </h3>
-                        <p className="text-black/70 mb-8 max-w-md">
-                          Redefining the user experience through intuitive design and seamless interactions.
-                        </p>
-                        <div className="flex items-center gap-4 text-sm font-medium">
-                          <span className="px-4 py-2 rounded-full bg-black/5 border border-black/10">UX/UI</span>
-                          <span className="px-4 py-2 rounded-full bg-black/5 border border-black/10">Development</span>
-                        </div>
+              <GlassCard className="p-0 overflow-hidden group">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                    />
+                    <div className="relative z-10">
+                      <span className="text-sm font-medium text-black/50 mb-4 block uppercase tracking-wider">
+                        {project.category}
+                      </span>
+                      <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
+                        {project.title}
+                      </h3>
+                      <p className="text-black/70 mb-8 max-w-md">
+                        Redefining the user experience through intuitive design and seamless interactions.
+                      </p>
+                      <div className="flex items-center gap-4 text-sm font-medium">
+                        <span className="px-4 py-2 rounded-full bg-black/5 border border-black/10">UX/UI</span>
+                        <span className="px-4 py-2 rounded-full bg-black/5 border border-black/10">Development</span>
                       </div>
                     </div>
-                    <ProjectMedia project={project} />
                   </div>
-                </GlassCard>
-              </Link>
+                  <ProjectMedia project={project} />
+                </div>
+              </GlassCard>
             </motion.div>
           ))}
         </div>
