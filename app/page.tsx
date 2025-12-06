@@ -28,8 +28,8 @@ export default function Home() {
       <section id="contact" className="py-32 relative">
         <div className="container mx-auto px-6 text-center relative z-10">
           <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-            Ready to shape <br />
-            <span className="text-gradient">the future?</span>
+            Ready to onboard <br />
+            <span className="text-gradient">the next billion?</span>
           </h2>
           <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto">
             Let's collaborate to build something extraordinary. Your vision, our expertise.
