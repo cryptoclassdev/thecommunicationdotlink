@@ -8,10 +8,14 @@ import Script from "next/script"
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
-  title: "thecommunication.link | Content Agency",
-  description: "Shaping the future of digital experiences.",
+  title: "thecommunication.link | Crypto Communication & Strategy",
+  description: "We help crypto teams explain complex products clearly, shape their narrative, and drive real adoption.",
+  icons: {
+    icon: "/cl-logo.png",
+  },
     generator: 'v0.app'
 }
+
 
 export default function RootLayout({
   children,
