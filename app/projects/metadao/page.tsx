@@ -77,18 +77,13 @@ export default function MetaDAOProject() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Work</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-black/70 leading-relaxed mb-6">
-                MetaDAO is pioneering the future of decentralized governance on Solana. We partnered with them to
-                amplify their vision through strategic content creation, community management, and social media
-                marketing.
+                MetaDAO is exploring new models for decentralized governance on Solana. We worked with the MetaDAO team to help explain futarchy, on-chain decision making, and governance mechanics through clear explainers, animations, and ecosystem-focused content.
               </p>
               <p className="text-lg text-black/70 leading-relaxed mb-6">
-                Our approach focused on translating complex Web3 concepts into engaging, accessible content that
-                resonates with both crypto natives and newcomers. Through consistent storytelling and community
-                engagement, we helped MetaDAO establish thought leadership in the DAO space.
+                Our work focused on making complex governance concepts understandable without oversimplifying them. By grounding abstract ideas in clear narratives and practical examples, we helped MetaDAO communicate what makes their approach different and why it matters.
               </p>
               <p className="text-lg text-black/70 leading-relaxed">
-                The results speak for themselves—increased community engagement, stronger brand presence, and a growing
-                ecosystem of passionate contributors who believe in the future of decentralized decision-making.
+                The outcome was clearer positioning, stronger understanding across the ecosystem, and content that helped both experienced crypto users and newcomers engage meaningfully with MetaDAO’s vision.
               </p>
             </div>
           </motion.div>
@@ -211,7 +206,7 @@ export default function MetaDAOProject() {
                   })
                 }
               }}
-              className="px-8 py-4 bg-black text-white rounded-full hover:bg-black/90 transition-colors text-lg font-medium"
+              className="px-8 py-4 bg-black text-white rounded-full hover:bg-black/90 transition-colors text-lg font-medium cursor-pointer"
             >
               Schedule a Call
             </button>

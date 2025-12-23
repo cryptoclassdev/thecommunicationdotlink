@@ -30,11 +30,6 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="#about" className="hover:text-black transition-colors">
-                  About
-                </Link>
-              </li>
-              <li>
                 <Link href="#contact" className="hover:text-black transition-colors">
                   Contact
                 </Link>
@@ -52,7 +47,13 @@ export function Footer() {
         </div>
 
         <div className="flex flex-col md:flex-row items-center justify-between pt-8 border-t border-black/5 text-sm text-black/40">
-          <p>&copy; 2025 thecommunication.link. All rights reserved.</p>
+          <p>
+            &copy; 2025{" "}
+            <Link href="https://thecommunication.link" className="text-black/40">
+              thecommunication.link
+            </Link>
+            . All rights reserved.
+          </p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
             <Link href="/privacy" className="hover:text-black transition-colors">
               Privacy Policy

@@ -36,7 +36,7 @@ export default function Home() {
           </p>
           <button
             onClick={handleScheduleCall}
-            className="px-10 py-5 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)]"
+            className="px-10 py-5 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)] cursor-pointer"
           >
             Schedule a call
           </button>

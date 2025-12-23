@@ -10,25 +10,25 @@ const services = [
     icon: <Lightbulb className="size-6" />,
     title: "Explainers",
     description:
-      "Clear, compelling messaging that turns complex ideas into simple, memorable stories. We refine your value proposition, build your narrative, and make people finally get what you are building.",
+      "Clear, structured explanations that turn complex crypto products into simple, memorable ideas. We help users understand what you are building, why it matters, and how it works without jargon or hype.",
   },
   {
     icon: <Speech className="size-6" />,
     title: "Communication",
     description:
-      "Every great crypto product needs a communication engine. We create scalable communication frameworks for Discord, X, announcements, and product updates—keeping your community aligned, informed, and excited.",
+      "Clear communication that keeps your story coherent as your product evolves. We help teams express progress, updates, and ideas in a way people can actually follow.",
   },
   {
     icon: <MonitorPlay className="size-6" />,
     title: "Animation",
     description:
-      "Threads, scripts, explainers, landing pages, and education flows designed to convert curiosity into users. We distill your product into content that spreads.",
+      "Narrative-driven animations and visual explainers that make abstract concepts easy to understand. We use motion to teach, not decorate, helping ideas land faster and stay memorable.",
   },
   {
     icon: <Rocket className="size-6" />,
     title: "Branding",
     description:
-      "From narrative positioning to launch playbooks, we map out how your project gets users, attention, and traction. Data-backed, crypto-native, and aligned with how people actually discover products today.",
+      "Positioning, messaging, and launch narratives that shape how your product is understood. We define how you talk about what you are building so users, partners, and the wider ecosystem hear a clear, consistent message.",
   },
 ]
 
