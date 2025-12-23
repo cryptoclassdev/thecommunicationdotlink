@@ -4,7 +4,7 @@ import Image from "next/image"
 const brands = [
   {
     name: "Solana",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764827839/solana_jaabos.svg",
+    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031556/Solana-logo_aneqxh.png",
     alt: "Solana blockchain platform logo",
   },
   {
@@ -28,9 +28,9 @@ const brands = [
     alt: "Jupiter aggregator platform logo",
   },
   {
-    name: "Backpack",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/Backpack_Logo_Vertical_yvalsh.png",
-    alt: "Backpack crypto wallet logo",
+    name: "Sui",
+    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031080/sui-logo_jlozl7.jpg",
+    alt: "sui logo",
   },
   {
     name: "Fogo",
@@ -41,6 +41,11 @@ const brands = [
     name: "validator",
     logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764828145/validator-logo_owdvbq.svg",
     alt: "validator logo"
+  },
+  {
+    name: "genzcash",
+    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031291/genzcash_usvrai.jpg",
+    alt: "genzcash logo"
   }
 ]
 

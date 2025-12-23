@@ -10,7 +10,7 @@ const teamMembers = [
     name: "Sebastian Montgomery",
     role: "Founder",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/seb-pfp_bs2cit.png",
-    bio: "A prominent voice in the Solana ecosystem, he has produced more than 1,000 educational videos and continues to drive the vision for the next 1,000 — advancing global understanding of decentralized infrastructure.",
+    bio: "A prominent voice in the Solana ecosystem who has produced more than 1,000 educational videos and continues to lead the next phase of growth by advancing global understanding of decentralized infrastructure.",
     accent: "blue",
   },
   {
@@ -24,21 +24,21 @@ const teamMembers = [
     name: "Pedro",
     role: "Lead Editor & Artist",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764583475/pedro_ah9wyo.png",
-    bio: "Pedro leads the creative production, crafting visually engaging content that informs, inspires, and connects with audiences. His work focuses on expanding the reach of thecommuncation.link and driving broader awareness and adoption of the Solana ecosystem through high-impact storytelling and design.",
+    bio: "Pedro leads the creative production, crafting visually engaging content that informs, inspires, and connects with audiences. His work focuses on expanding the reach of thecommunication.link and driving broader awareness and adoption of the Solana ecosystem through high-impact storytelling and design.",
     accent: "indigo",
   },
   {
     name: "Bruno",
     role: "Content Creator",
     image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764613095/bruno-dp_tulfzo.jpg",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    bio: "A versatile graphic designer and visual creative with a strong eye for detail and composition. Bruno produces high-quality artwork, edits video content, and supports social content creation, bringing a well-rounded skill set to projects that require both visual polish and creative flexibility.",
     accent: "pink",
   },
   {
     name: "Luca",
-    role: "Content Manager",
-    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/hfp-pfp_arft49.png",
-    bio: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
+    role: "Animator",
+    image: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765030492/hfp-pfp_arft49.jpg",
+    bio: "An animator and concept artist with a bachelor's degree in animation and a master's degree in concept art. Previously part of Adobe France, Luca now creates short-form crypto animations and edits for projects like MetaDAO and Zcash, specialising in stylised formats inspired by Family Guy and Rick and Morty. Within the team, he leads animation execution, visual style development, and game and design concepts.",
     accent: "blue",
   },
 ]
@@ -78,17 +78,11 @@ export default function TeamPage() {
               transition={{ duration: 0.8 }}
               className="text-center mb-12"
             >
-              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-black/5 border border-black/10 mb-6">
-                <span className="text-xs font-medium text-black/60 uppercase tracking-wider">Meet the Team</span>
-              </div>
               <h1 className="text-5xl md:text-7xl font-bold tracking-tight mb-6 text-balance">
-                The minds behind
-                <br />
-                <span className="text-gradient">the communication</span>
+                <span className="text-gradient">The Team </span>
               </h1>
               <p className="text-lg md:text-xl text-black/60 max-w-2xl mx-auto leading-relaxed">
-                A diverse team of creators, researchers, and storytellers united by one mission: making crypto
-                communication simple, clear, and compelling.
+                A team dedicated to making complex crypto systems understandable, usable, and worth paying attention to.
               </p>
             </motion.div>
           </div>
