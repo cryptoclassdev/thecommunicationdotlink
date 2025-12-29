@@ -3,9 +3,12 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
+import PulsatingDots from "@/components/pulsating-dots"
 
 export default function MetaDAOProject() {
+  const [isLoading, setIsLoading] = useState(true)
+
   useEffect(() => {
     // Load Twitter widget script
     const script = document.createElement("script")
@@ -14,15 +17,40 @@ export default function MetaDAOProject() {
     script.charset = "utf-8"
     document.body.appendChild(script)
 
+    const checkTweetsLoaded = setInterval(() => {
+      const twitterIframes = document.querySelectorAll('iframe[id^="twitter-widget"]')
+      const loadedIframes = Array.from(twitterIframes).filter(
+        (iframe) => (iframe as HTMLIFrameElement).offsetHeight > 0,
+      )
+
+      if (loadedIframes.length === 4) {
+        setIsLoading(false)
+        clearInterval(checkTweetsLoaded)
+      }
+    }, 500)
+
+    const timeout = setTimeout(() => {
+      setIsLoading(false)
+      clearInterval(checkTweetsLoaded)
+    }, 15000)
+
     return () => {
       if (document.body.contains(script)) {
         document.body.removeChild(script)
       }
+      clearInterval(checkTweetsLoaded)
+      clearTimeout(timeout)
     }
   }, [])
 
   return (
     <div className="min-h-screen bg-white">
+      {isLoading && (
+        <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
+          <PulsatingDots color="black" />
+        </div>
+      )}
+
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-blue-100/30 rounded-full blur-[120px] pointer-events-none" />
@@ -77,13 +105,18 @@ export default function MetaDAOProject() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Work</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-black/70 leading-relaxed mb-6">
-                MetaDAO is exploring new models for decentralized governance on Solana. We worked with the MetaDAO team to help explain futarchy, on-chain decision making, and governance mechanics through clear explainers, animations, and ecosystem-focused content.
+                MetaDAO is exploring new models for decentralized governance on Solana. We worked with the MetaDAO team
+                to help explain futarchy, on-chain decision making, and governance mechanics through clear explainers,
+                animations, and ecosystem-focused content.
               </p>
               <p className="text-lg text-black/70 leading-relaxed mb-6">
-                Our work focused on making complex governance concepts understandable without oversimplifying them. By grounding abstract ideas in clear narratives and practical examples, we helped MetaDAO communicate what makes their approach different and why it matters.
+                Our work focused on making complex governance concepts understandable without oversimplifying them. By
+                grounding abstract ideas in clear narratives and practical examples, we helped MetaDAO communicate what
+                makes their approach different and why it matters.
               </p>
               <p className="text-lg text-black/70 leading-relaxed">
-                The outcome was clearer positioning, stronger understanding across the ecosystem, and content that helped both experienced crypto users and newcomers engage meaningfully with MetaDAO’s vision.
+                The outcome was clearer positioning, stronger understanding across the ecosystem, and content that
+                helped both experienced crypto users and newcomers engage meaningfully with MetaDAO’s vision.
               </p>
             </div>
           </motion.div>
