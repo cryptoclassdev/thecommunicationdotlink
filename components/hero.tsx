@@ -14,7 +14,7 @@ export function Hero() {
       </div>
       <div className="w-full py-16 px-4 md:px-8 lg:px-16 bg-background">
         <p className="text-3xl md:text-5xl lg:text-5xl text-foreground leading-tight">
-          <Link href="/" className="font-bold tracking-tighter relative z-50 text-black">
+          <Link href="/" className="font-bold tracking-tighter relative z-0 text-black">
           thecommunication<span className="text-blue-600">.</span>link
         </Link> is where crypto teams find their voice.
           <br />

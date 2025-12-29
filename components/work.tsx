@@ -22,8 +22,8 @@ const projects = [
     category: "Explainers, New User Onbaording",
     description:
       "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765011323/met-thumb_aqjzdj.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765011323/met-thumb_aqjzdj.jpg",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767027513/met-thumb_aqjzdj.mp4",
+    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
     color: "from-[#FF5722]/20 to-[#9C27B0]/20",
     slug: "meteora",
     tags: ["Explainers", "Onboarding"],
@@ -49,6 +49,7 @@ const projects = [
     color: "from-[#00B8B8]/20 to-[#9B4BFF]/20",
     slug: "solana-mobile",
     tags: ["Product Review", "Video Content"],
+    youtubeUrl: "https://youtu.be/ZPReMS8bnlA",
   },
 ]
 
@@ -122,34 +123,65 @@ export function Work() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <Link href={`/projects/${project.slug}`}>
-                <GlassCard className="p-0 overflow-hidden group cursor-pointer">
-                  <div className="grid md:grid-cols-2 gap-0">
-                    <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
-                      <div
-                        className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                      />
-                      <div className="relative z-10">
-                        <span className="text-sm font-medium text-black/50 mb-4 block uppercase tracking-wider">
-                          {project.category}
-                        </span>
-                        <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                          {project.title}
-                        </h3>
-                        <p className="text-black/70 mb-8 max-w-md">{project.description}</p>
-                        <div className="flex items-center gap-4 text-sm font-medium">
-                          {project.tags.map((tag, tagIndex) => (
-                            <span key={tagIndex} className="px-4 py-2 rounded-full bg-black/5 border border-black/10">
-                              {tag}
-                            </span>
-                          ))}
+              {project.youtubeUrl ? (
+                <a href={project.youtubeUrl} target="_blank" rel="noopener noreferrer">
+                  <GlassCard className="p-0 overflow-hidden group cursor-pointer">
+                    <div className="grid md:grid-cols-2 gap-0">
+                      <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                        />
+                        <div className="relative z-10">
+                          <span className="text-sm font-medium text-black/50 mb-4 block uppercase tracking-wider">
+                            {project.category}
+                          </span>
+                          <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
+                            {project.title}
+                          </h3>
+                          <p className="text-black/70 mb-8 max-w-md">{project.description}</p>
+                          <div className="flex items-center gap-4 text-sm font-medium">
+                            {project.tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="px-4 py-2 rounded-full bg-black/5 border border-black/10">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
+                      <ProjectMedia project={project} />
                     </div>
-                    <ProjectMedia project={project} />
-                  </div>
-                </GlassCard>
-              </Link>
+                  </GlassCard>
+                </a>
+              ) : (
+                <Link href={`/projects/${project.slug}`}>
+                  <GlassCard className="p-0 overflow-hidden group cursor-pointer">
+                    <div className="grid md:grid-cols-2 gap-0">
+                      <div className={`p-12 flex flex-col justify-center relative overflow-hidden`}>
+                        <div
+                          className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
+                        />
+                        <div className="relative z-10">
+                          <span className="text-sm font-medium text-black/50 mb-4 block uppercase tracking-wider">
+                            {project.category}
+                          </span>
+                          <h3 className="text-4xl md:text-5xl font-bold mb-6 group-hover:translate-x-2 transition-transform duration-500">
+                            {project.title}
+                          </h3>
+                          <p className="text-black/70 mb-8 max-w-md">{project.description}</p>
+                          <div className="flex items-center gap-4 text-sm font-medium">
+                            {project.tags.map((tag, tagIndex) => (
+                              <span key={tagIndex} className="px-4 py-2 rounded-full bg-black/5 border border-black/10">
+                                {tag}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+                      <ProjectMedia project={project} />
+                    </div>
+                  </GlassCard>
+                </Link>
+              )}
             </motion.div>
           ))}
         </div>
