@@ -2,12 +2,18 @@
 
 import { motion } from "framer-motion"
 
-export default function PulsatingDots() {
+interface PulsatingDotsProps {
+  color?: string
+}
+
+export default function PulsatingDots({ color = "black" }: PulsatingDotsProps) {
+  const bgColorClass = color === "black" ? "bg-black" : `bg-${color}-500`
+
   return (
     <div className="flex items-center justify-center">
       <div className="flex space-x-2">
         <motion.div
-          className="h-3 w-3 rounded-full bg-yellow-500"
+          className={`h-3 w-3 rounded-full ${bgColorClass}`}
           animate={{
             scale: [1, 1.5, 1],
             opacity: [0.5, 1, 0.5],
@@ -19,7 +25,7 @@ export default function PulsatingDots() {
           }}
         />
         <motion.div
-          className="h-3 w-3 rounded-full bg-yellow-500"
+          className={`h-3 w-3 rounded-full ${bgColorClass}`}
           animate={{
             scale: [1, 1.5, 1],
             opacity: [0.5, 1, 0.5],
@@ -32,7 +38,7 @@ export default function PulsatingDots() {
           }}
         />
         <motion.div
-          className="h-3 w-3 rounded-full bg-yellow-500"
+          className={`h-3 w-3 rounded-full ${bgColorClass}`}
           animate={{
             scale: [1, 1.5, 1],
             opacity: [0.5, 1, 0.5],

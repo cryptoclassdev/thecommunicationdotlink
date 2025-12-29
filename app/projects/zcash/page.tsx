@@ -63,14 +63,12 @@ export default function ZcashProject() {
     <div className="min-h-screen bg-white">
       {isLoading && (
         <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
-          <PulsatingDots />
+          <PulsatingDots color="black" />
         </div>
       )}
 
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-yellow-100/30 rounded-full blur-[120px] pointer-events-none" />
-
         <div className="container mx-auto px-6 relative z-10">
           <motion.div initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} className="mb-12">
             <Link
@@ -121,18 +119,18 @@ export default function ZcashProject() {
             <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Work</h2>
             <div className="prose prose-lg max-w-none">
               <p className="text-lg text-black/70 leading-relaxed mb-6">
-                Zcash is pioneering privacy technology in blockchain. We partnered with the Zcash team to create
+                ZCASH is pioneering privacy technology in blockchain. We partnered with the team to create
                 engaging animations and social content that makes privacy-preserving technology accessible and
                 understandable for a broader audience.
               </p>
               <p className="text-lg text-black/70 leading-relaxed mb-6">
                 Our work focused on visual storytelling that captures attention while educating viewers about the
                 importance of financial privacy. Through creative motion design and compelling narratives, we helped
-                Zcash communicate complex cryptographic concepts in an engaging way.
+                ZCASH communicate complex cryptographic concepts in an engaging way.
               </p>
               <p className="text-lg text-black/70 leading-relaxed">
                 The result was a collection of shareable content that drives awareness, builds understanding, and
-                positions Zcash as a leader in privacy-preserving blockchain technology.
+                positions ZCASH as a leader in privacy-preserving blockchain technology.
               </p>
             </div>
           </motion.div>
@@ -140,7 +138,7 @@ export default function ZcashProject() {
       </section>
 
       {/* Social Proof Section */}
-      <section className="py-20 relative overflow-hidden bg-gradient-to-b from-white via-yellow-50/30 to-white">
+      <section className="py-20 relative overflow-hidden bg-white">
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -150,7 +148,7 @@ export default function ZcashProject() {
           >
             <h2 className="text-3xl md:text-4xl font-bold mb-4">Featured Content</h2>
             <p className="text-xl text-black/60 max-w-2xl mx-auto">
-              See how our animations bring Zcash's privacy mission to life
+              See how our animations bring ZCASH's privacy mission to life
             </p>
           </motion.div>
 
@@ -192,7 +190,7 @@ export default function ZcashProject() {
 
       {/* CTA Section */}
       <section className="py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-yellow-50 via-white to-amber-50" />
+        <div className="absolute inset-0 bg-white" />
 
         <div className="container mx-auto px-6 relative z-10">
           <motion.div
