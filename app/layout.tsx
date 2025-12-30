@@ -1,11 +1,8 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { Manrope } from "next/font/google"
 import "./globals.css"
 import { cn } from "@/lib/utils"
 import Script from "next/script"
-
-const manrope = Manrope({ subsets: ["latin"], variable: "--font-sans" })
 
 export const metadata: Metadata = {
   title: "thecommunication.link | Crypto Communication & Strategy",
@@ -26,7 +23,7 @@ export default function RootLayout({
       <head>
         <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet" />
       </head>
-      <body className={cn("min-h-screen bg-white font-sans antialiased selection:bg-black/10", manrope.variable)}>
+      <body className={cn("min-h-screen bg-white font-sans antialiased selection:bg-black/10")}>
         {children}
         <Script src="https://assets.calendly.com/assets/external/widget.js" strategy="lazyOnload" />
       </body>
