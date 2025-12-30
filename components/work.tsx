@@ -45,7 +45,7 @@ const projects = [
     description:
       "Providing a detailed, user-focused product review that clearly explains Solana Mobile’s hardware, software, and ecosystem experience.",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.jpg",
+    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767031550/seeker-thumb_ee3qxj.jpg",
     color: "from-[#00B8B8]/20 to-[#9B4BFF]/20",
     slug: "solana-mobile",
     tags: ["Product Review", "Video Content"],
