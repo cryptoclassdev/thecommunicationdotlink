@@ -1,10 +1,12 @@
 "use client"
 
-import { TweetData } from "@/types/tweet"
+import type React from "react"
+
+import type { TweetData } from "@/types/tweet"
 import Image from "next/image"
 import Link from "next/link"
 import { useState } from "react"
-import { Heart, MessageCircle, Repeat2, Share, BarChart3, Play } from "lucide-react"
+import { Heart, MessageCircle, Repeat2, Share, BarChart3 } from "lucide-react"
 
 interface CustomTweetCardProps {
   tweet: TweetData
@@ -35,13 +37,7 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
           <div className="flex items-start gap-3 flex-1 min-w-0">
             {/* Profile Picture */}
             <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
-              <Image
-                src={tweet.author.avatar}
-                alt={tweet.author.name}
-                fill
-                className="object-cover"
-                sizes="48px"
-              />
+              <Image src="/images/meta-icon.jpg" alt={tweet.author.name} fill className="object-cover" sizes="48px" />
             </div>
 
             {/* Author Info */}
@@ -95,9 +91,7 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
 
         {/* Tweet Content */}
         <div className="mb-3">
-          <p className="text-[15px] text-gray-900 leading-5 whitespace-pre-wrap break-words">
-            {tweet.content}
-          </p>
+          <p className="text-[15px] text-gray-900 leading-5 whitespace-pre-wrap break-words">{tweet.content}</p>
         </div>
 
         {/* Media Container */}
@@ -112,15 +106,10 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
                   controls
                   preload="metadata"
                 />
-                <div className="absolute inset-0 flex items-center justify-center pointer-events-none group-hover:opacity-0 transition-opacity">
-                  <div className="w-[68px] h-[68px] bg-[#1D9BF0] rounded-full flex items-center justify-center">
-                    <Play className="w-7 h-7 text-white fill-white ml-1" />
-                  </div>
-                </div>
               </div>
             ) : (
               <Image
-                src={tweet.media.url}
+                src={tweet.media.url || "/placeholder.svg"}
                 alt="Tweet media"
                 width={600}
                 height={400}
