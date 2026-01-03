@@ -20,17 +20,22 @@ export function Footer() {
             <h4 className="font-semibold mb-6">Sitemap</h4>
             <ul className="space-y-4 text-black/60">
               <li>
-                <Link href="#work" className="hover:text-black transition-colors">
+                <Link href="/#work" className="hover:text-black transition-colors">
                   Work
                 </Link>
               </li>
               <li>
-                <Link href="#services" className="hover:text-black transition-colors">
+                <Link href="/#services" className="hover:text-black transition-colors">
                   Services
                 </Link>
               </li>
               <li>
-                <Link href="#contact" className="hover:text-black transition-colors">
+                <Link href="/team/" className="hover:text-black transition-colors">
+                  Team
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contact" className="hover:text-black transition-colors">
                   Contact
                 </Link>
               </li>
@@ -55,10 +60,10 @@ export function Footer() {
             . All rights reserved.
           </p>
           <div className="flex items-center gap-6 mt-4 md:mt-0">
-            <Link href="/privacy" className="hover:text-black transition-colors">
+            <Link href="/privacy/" className="hover:text-black transition-colors">
               Privacy Policy
             </Link>
-            <Link href="/terms" className="hover:text-black transition-colors">
+            <Link href="/terms/" className="hover:text-black transition-colors">
               Terms of Service
             </Link>
           </div>

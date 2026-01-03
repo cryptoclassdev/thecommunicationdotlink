@@ -7,6 +7,7 @@ import { motion, useScroll, useMotionValueEvent } from "framer-motion"
 import { Menu, X } from "lucide-react"
 import { cn } from "@/lib/utils"
 import Link from "next/link"
+import { usePathname } from "next/navigation"
 
 declare global {
   interface Window {
@@ -20,15 +21,19 @@ export function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const { scrollY } = useScroll()
+  const pathname = usePathname()
 
   useMotionValueEvent(scrollY, "change", (latest) => {
     setIsScrolled(latest > 50)
   })
 
+  // Determine if we're on the homepage
+  const isHomePage = pathname === "/"
+
   const navLinks = [
-    { name: "Work", href: "#work" },
-    { name: "Services", href: "#services" },
-    { name: "Team", href: "/team" },
+    { name: "Work", href: isHomePage ? "#work" : "/#work" },
+    { name: "Services", href: isHomePage ? "#services" : "/#services" },
+    { name: "Team", href: "/team/" },
   ]
 
   const handleCalendlyClick = (e: React.MouseEvent) => {
