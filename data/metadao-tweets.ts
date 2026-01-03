@@ -6,7 +6,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -30,7 +30,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -54,7 +54,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -78,7 +78,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -102,7 +102,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -126,7 +126,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -150,7 +150,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -174,7 +174,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -198,7 +198,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -222,7 +222,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -246,7 +246,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -270,7 +270,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -294,7 +294,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -318,7 +318,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
@@ -342,7 +342,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAO",
-      avatar: "/placeholder-logo.png",
+      avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
     content:
