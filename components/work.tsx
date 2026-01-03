@@ -3,7 +3,7 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useRef, useEffect } from "react"
+import { useRef } from "react"
 
 const projects = [
   {
@@ -55,7 +55,6 @@ const projects = [
 
 function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
   const videoRef = useRef<HTMLVideoElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
   const playPromiseRef = useRef<Promise<void> | null>(null)
 
   const handleMouseEnter = async () => {
@@ -80,39 +79,8 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
     }
   }
 
-  // Auto-play on mobile when in view
-  useEffect(() => {
-    const isMobile = window.matchMedia("(max-width: 768px)").matches
-    if (!isMobile || !containerRef.current || !videoRef.current) return
-
-    const observer = new IntersectionObserver(
-      async (entries) => {
-        const entry = entries[0]
-        if (entry.isIntersecting && videoRef.current) {
-          try {
-            await videoRef.current.play()
-          } catch (error) {
-            // Ignore autoplay errors
-          }
-        } else if (!entry.isIntersecting && videoRef.current) {
-          videoRef.current.pause()
-        }
-      },
-      {
-        threshold: 0.5, // Play when 50% visible
-      }
-    )
-
-    observer.observe(containerRef.current)
-
-    return () => {
-      observer.disconnect()
-    }
-  }, [])
-
   return (
     <div
-      ref={containerRef}
       className="relative h-[300px] md:h-[400px] overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}

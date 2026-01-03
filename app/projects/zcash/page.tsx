@@ -6,7 +6,6 @@ import { ArrowLeft } from "lucide-react"
 import { useEffect, useState } from "react"
 import { TweetEmbed } from "@/components/tweet-embed"
 import PulsatingDots from "@/components/pulsating-dots"
-import { Footer } from "@/components/footer"
 
 const ZCASH_TWEET_IDS = [
   "2003570900545982505",
@@ -220,8 +219,6 @@ export default function ZcashProject() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }

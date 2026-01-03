@@ -1,8 +1,5 @@
-"use client"
-
 import type React from "react"
 import { cn } from "@/lib/utils"
-import { useState } from "react"
 
 interface MarqueeProps {
   className?: string
@@ -23,20 +20,6 @@ export function Marquee({
   repeat = 4,
   ...props
 }: MarqueeProps) {
-  const [isPaused, setIsPaused] = useState(false)
-
-  const handleTouchStart = () => {
-    if (pauseOnHover) {
-      setIsPaused(true)
-    }
-  }
-
-  const handleTouchEnd = () => {
-    if (pauseOnHover) {
-      setIsPaused(false)
-    }
-  }
-
   return (
     <div
       {...props}
@@ -48,8 +31,6 @@ export function Marquee({
         },
         className,
       )}
-      onTouchStart={handleTouchStart}
-      onTouchEnd={handleTouchEnd}
     >
       {Array(repeat)
         .fill(0)
@@ -59,8 +40,7 @@ export function Marquee({
             className={cn("flex shrink-0 justify-around [gap:var(--gap)]", {
               "animate-marquee flex-row": !vertical,
               "animate-marquee-vertical flex-col": vertical,
-              "group-hover:[animation-play-state:paused]": pauseOnHover && !isPaused,
-              "[animation-play-state:paused]": isPaused,
+              "group-hover:[animation-play-state:paused]": pauseOnHover,
               "[animation-direction:reverse]": reverse,
             })}
           >

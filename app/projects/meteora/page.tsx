@@ -4,7 +4,6 @@ import { motion } from "framer-motion"
 import Link from "next/link"
 import { ArrowLeft } from "lucide-react"
 import { VideoPlayer } from "@/components/ui/video-player"
-import { Footer } from "@/components/footer"
 
 export default function MeteoraProject() {
   const videos = [
@@ -183,8 +182,6 @@ export default function MeteoraProject() {
           </motion.div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
