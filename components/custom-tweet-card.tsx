@@ -86,7 +86,7 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
                   </defs>
                   <g clipRule="evenodd" fillRule="evenodd">
                     <path
-                      d="M13.324 3.848L11 1.6 8.676 3.848l-3.201-.453-.559 3.184L2.06 8.095 3.48 11l-1.42 2.904 2.856 1.516.559 3.184 3.201-.452L11 20.4l2.324-2.248 3.201.452.559-3.184 2.856-1.516L18.52 11l1.42-2.905-2.856-1.516-.559-3.184zm-7.09 7.575l3.428 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
+                      d="M13.324 3.848L11 1.6 8.676 3.848l-3.201-.453-.559 3.184L2.06 8.095 3.48 11l-1.42 2.904 2.856 1.516.559 3.184 3.201-.452L11 20.4l2.324-2.248 3.201.452.559-3.184 2.856-1.516L18.52 11l1.42-2.905-2.856-1.37-.559-3.184zm-7.09 7.575l3.428 3.428 5.683-6.206-1.347-1.247-4.4 4.795-2.072-2.072z"
                       fill="url(#0-a)"
                     ></path>
                     <path
@@ -104,37 +104,34 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
             <span className="text-[15px] text-gray-500">@{tweet.author.username}</span>
           </div>
         </div>
+      </div>
 
-        {/* Media Container */}
-        {tweet.media && (
-          <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative">
-            {tweet.media.type === "youtube" ? (
-              <div className="relative aspect-video bg-black">
-                <iframe
-                  src={`https://www.youtube.com/embed/${tweet.media.youtubeId}`}
-                  title="YouTube video player"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full"
-                />
-              </div>
-            ) : tweet.media.type === "video" ? (
-              <div className="relative aspect-video bg-black group">
-                <video
-                  src={tweet.media.url}
-                  poster={tweet.media.thumbnail}
-                  className="w-full h-full object-contain"
-                  controls
-                  preload="metadata"
-                />
-              </div>
-            ) : (
-              <Image
-                src={tweet.media.url || "/placeholder.svg"}
-                alt="Tweet media"
-                width={600}
-                height={400}
-                className="w-full h-auto"
+      {/* Tweet Text Content */}
+      {tweet.content && (
+        <p className="text-[15px] text-gray-900 mb-3 leading-normal whitespace-pre-wrap break-words">{tweet.content}</p>
+      )}
+
+      {/* Media Container */}
+      {tweet.media && (
+        <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+          {tweet.media.type === "youtube" ? (
+            <div className="relative aspect-video bg-black">
+              <iframe
+                src={`https://www.youtube.com/embed/${tweet.media.youtubeId}`}
+                title="YouTube video player"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+              />
+            </div>
+          ) : tweet.media.type === "video" ? (
+            <div className="relative aspect-video bg-black group">
+              <video
+                src={tweet.media.url}
+                poster={tweet.media.thumbnail}
+                className="w-full h-full object-contain"
+                controls
+                preload="metadata"
               />
             </div>
           ) : (
