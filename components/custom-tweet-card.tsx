@@ -96,9 +96,19 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
 
         {/* Media Container */}
         {tweet.media && (
-          <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative group">
-            {tweet.media.type === "video" ? (
+          <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+            {tweet.media.type === "youtube" ? (
               <div className="relative aspect-video bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${tweet.media.youtubeId}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            ) : tweet.media.type === "video" ? (
+              <div className="relative aspect-video bg-black group">
                 <video
                   src={tweet.media.url}
                   poster={tweet.media.thumbnail}
