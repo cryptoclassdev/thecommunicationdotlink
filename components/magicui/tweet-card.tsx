@@ -10,7 +10,7 @@ export async function TweetCard({ id }: { id: string }) {
 
 export function TweetSkeleton() {
   return (
-    <div className="overflow-hidden rounded-xl border border-black/10 bg-white p-6">
+    <div className="overflow-hidden rounded-xl border border-black/10 bg-white p-6 min-h-[300px]">
       <div className="animate-pulse">
         <div className="flex items-center gap-3 mb-4">
           <div className="w-12 h-12 rounded-full bg-black/10" />
