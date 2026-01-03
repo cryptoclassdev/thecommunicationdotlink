@@ -8,50 +8,8 @@ import PulsatingDots from "@/components/pulsating-dots"
 import { Footer } from "@/components/footer"
 
 export default function MetaDAOProject() {
-  const [isLoading, setIsLoading] = useState(true)
-
-  useEffect(() => {
-    // Load Twitter widget script
-    const script = document.createElement("script")
-    script.src = "https://platform.twitter.com/widgets.js"
-    script.async = true
-    script.charset = "utf-8"
-    document.body.appendChild(script)
-
-    const checkTweetsLoaded = setInterval(() => {
-      const twitterIframes = document.querySelectorAll('iframe[id^="twitter-widget"]')
-      const loadedIframes = Array.from(twitterIframes).filter(
-        (iframe) => (iframe as HTMLIFrameElement).offsetHeight > 0,
-      )
-
-      if (loadedIframes.length === 4) {
-        setIsLoading(false)
-        clearInterval(checkTweetsLoaded)
-      }
-    }, 500)
-
-    const timeout = setTimeout(() => {
-      setIsLoading(false)
-      clearInterval(checkTweetsLoaded)
-    }, 15000)
-
-    return () => {
-      if (document.body.contains(script)) {
-        document.body.removeChild(script)
-      }
-      clearInterval(checkTweetsLoaded)
-      clearTimeout(timeout)
-    }
-  }, [])
-
   return (
     <div className="min-h-screen bg-white">
-      {isLoading && (
-        <div className="fixed inset-0 bg-white z-50 flex items-center justify-center">
-          <PulsatingDots color="black" />
-        </div>
-      )}
-
       {/* Hero Section */}
       <section className="py-20 md:py-32 relative overflow-hidden">
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[60vw] h-[60vw] bg-gradient-to-br from-blue-100/40 via-purple-100/30 to-cyan-100/20 rounded-full blur-[150px] pointer-events-none" />
