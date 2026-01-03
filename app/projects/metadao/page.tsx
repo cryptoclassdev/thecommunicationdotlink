@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowLeft, Quote } from "lucide-react"
 import { CustomTweetCard } from "@/components/custom-tweet-card"
 import { METADAO_TWEETS } from "@/data/metadao-tweets"
@@ -75,15 +76,20 @@ export default function MetaDAOProject() {
                   governance around futarchy and on-chain decision making driven by markets and incentives, ideas that
                   are unfamiliar even to experienced crypto users. Our work focused on making this legible through clear
                   explainers and educational content, supported by an animation series that ran as an awareness campaign
-                  across Crypto Twitter to surface the ideas and spark curiosity. As the product matured, MetaDAO emerged
-                  as one of the few projects in 2025 to gain attention for shipping real infrastructure, with growing
-                  interest from teams exploring launches through its framework.
+                  across Crypto Twitter to surface the ideas and spark curiosity. As the product matured, MetaDAO
+                  emerged as one of the few projects in 2025 to gain attention for shipping real infrastructure, with
+                  growing interest from teams exploring launches through its framework.
                 </blockquote>
 
                 {/* Author */}
                 <div className="flex items-center gap-4">
-                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold">
-                    S
+                  <div className="w-16 h-16 rounded-full overflow-hidden relative flex-shrink-0">
+                    <Image
+                      src="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/seb-pfp_bs2cit.png"
+                      alt="Sebastian Montgomery"
+                      fill
+                      className="object-cover"
+                    />
                   </div>
                   <div>
                     <div className="font-bold text-lg">Sebastian Montgomery</div>
@@ -125,7 +131,7 @@ export default function MetaDAOProject() {
             viewport={{ once: true }}
             className="max-w-3xl mx-auto text-center"
           >
-            <h2 className="text-4xl md:text-6xl font-bold mb-6">Ready to grow your community?</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6">Ready to grow your community and attract real users?</h2>
             <p className="text-xl text-black/60 mb-10">
               Let's create a content strategy that drives real engagement and builds lasting relationships with your
               audience.
