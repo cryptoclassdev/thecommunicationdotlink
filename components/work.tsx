@@ -3,7 +3,7 @@
 import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { useRef } from "react"
+import { useRef, useEffect, useState } from "react"
 
 const projects = [
   {
@@ -55,10 +55,62 @@ const projects = [
 
 function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
   const videoRef = useRef<HTMLVideoElement>(null)
+  const containerRef = useRef<HTMLDivElement>(null)
   const playPromiseRef = useRef<Promise<void> | null>(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    // Detect if device is mobile
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768)
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  useEffect(() => {
+    // Only set up intersection observer on mobile
+    if (!isMobile || !containerRef.current || !videoRef.current) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach(async (entry) => {
+          if (entry.isIntersecting && videoRef.current) {
+            playPromiseRef.current = videoRef.current.play()
+            try {
+              await playPromiseRef.current
+            } catch (error) {
+              // Ignore errors
+            }
+          } else if (!entry.isIntersecting && videoRef.current && playPromiseRef.current) {
+            try {
+              await playPromiseRef.current
+              videoRef.current.pause()
+            } catch (error) {
+              // Ignore errors
+            }
+          }
+        })
+      },
+      {
+        threshold: 0.5, // Play when 50% visible
+      }
+    )
+
+    observer.observe(containerRef.current)
+
+    return () => {
+      if (containerRef.current) {
+        observer.unobserve(containerRef.current)
+      }
+    }
+  }, [isMobile])
 
   const handleMouseEnter = async () => {
-    if (videoRef.current) {
+    if (videoRef.current && !isMobile) {
       playPromiseRef.current = videoRef.current.play()
       try {
         await playPromiseRef.current
@@ -69,7 +121,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
   }
 
   const handleMouseLeave = async () => {
-    if (videoRef.current && playPromiseRef.current) {
+    if (videoRef.current && playPromiseRef.current && !isMobile) {
       try {
         await playPromiseRef.current
         videoRef.current.pause()
@@ -81,6 +133,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
 
   return (
     <div
+      ref={containerRef}
       className="relative h-[300px] md:h-[400px] overflow-hidden"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
