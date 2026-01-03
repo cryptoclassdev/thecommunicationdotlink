@@ -1,4 +1,4 @@
-import { TweetData } from "@/types/tweet"
+import type { TweetData } from "@/types/tweet"
 
 export const METADAO_TWEETS: TweetData[] = [
   {
@@ -9,8 +9,7 @@ export const METADAO_TWEETS: TweetData[] = [
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Welcome to MetaDAO (A Futard Origin Story):",
+    content: "Welcome to MetaDAO (A Futard Origin Story):",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -33,8 +32,7 @@ export const METADAO_TWEETS: TweetData[] = [
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Futarchy in the wild:",
+    content: "Futarchy in the wild:",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -57,8 +55,7 @@ export const METADAO_TWEETS: TweetData[] = [
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Angels Among Us:",
+    content: "Angels Among Us:",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -77,12 +74,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1956023221545001212",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Futarchy Evangelists",
+    content: "Futarchy Evangelists",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -101,12 +97,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1958672887117742217",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Fairtarchy",
+    content: "Fairtarchy",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -125,12 +120,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1961134346942963935",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Famous Families",
+    content: "Famous Families",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -149,12 +143,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1963665540838211884",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Insider Trading",
+    content: "Insider Trading",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -173,12 +166,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1966219386991378932",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Life on the Front Lines",
+    content: "Life on the Front Lines",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -188,7 +180,7 @@ export const METADAO_TWEETS: TweetData[] = [
       likes: 52,
       replies: 7,
       retweets: 7,
-      views: 3392      ,
+      views: 3392,
     },
     timestamp: "Sep 2, 2025",
     tweetUrl: "https://twitter.com/MetaDAO/status/1966219386991378932",
@@ -197,12 +189,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1968753291254521897",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Exercising Restraint",
+    content: "Exercising Restraint",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -221,12 +212,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1971645084736045448",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "The Scandal",
+    content: "The Scandal",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -245,12 +235,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1973826339435393470",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "The Learning Curve",
+    content: "The Learning Curve",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -269,12 +258,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1976364501088796746",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "The Trading Bot",
+    content: "The Trading Bot",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -293,12 +281,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1978906017812369891",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Being a Celebrity",
+    content: "Being a Celebrity",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -317,12 +304,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1981442070062694695",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "The Halloween Special",
+    content: "The Halloween Special",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
@@ -341,12 +327,11 @@ export const METADAO_TWEETS: TweetData[] = [
     id: "1983975628803051689",
     author: {
       name: "MetaDAO",
-      username: "MetaDAO",
+      username: "MetaDAOProject",
       avatar: "/public/images/meta-icon.jpg",
       verified: true,
     },
-    content:
-      "Living in the Futarchy",
+    content: "Living in the Futarchy",
     media: {
       type: "youtube",
       url: "https://youtu.be/UIBqNDhc1Rw",
