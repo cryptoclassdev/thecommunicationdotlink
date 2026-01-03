@@ -8,9 +8,10 @@ export interface TweetData {
   }
   content: string
   media?: {
-    type: "video" | "image"
+    type: "video" | "image" | "youtube"
     url: string
     thumbnail?: string
+    youtubeId?: string
   }
   engagement: {
     likes: number

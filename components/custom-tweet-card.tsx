@@ -105,31 +105,36 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
           </div>
         </div>
 
-        {/* Follow Button */}
-        <button
-          onClick={() => window.open(tweet.tweetUrl, "_blank")}
-          className="px-4 py-1.5 bg-black text-white text-sm font-bold rounded-full hover:bg-gray-800 transition-colors flex-shrink-0"
-        >
-          Follow
-        </button>
-      </div>
-
-      {/* Tweet Content */}
-      <div className="mb-3">
-        <p className="text-[15px] text-gray-900 leading-5 whitespace-pre-wrap break-words">{tweet.content}</p>
-      </div>
-
-      {/* Media Container */}
-      {tweet.media && (
-        <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative group">
-          {tweet.media.type === "video" ? (
-            <div className="relative aspect-video bg-black">
-              <video
-                src={tweet.media.url}
-                poster={tweet.media.thumbnail}
-                className="w-full h-full object-contain"
-                controls
-                preload="metadata"
+        {/* Media Container */}
+        {tweet.media && (
+          <div className="mb-3 rounded-2xl overflow-hidden border border-gray-200 relative">
+            {tweet.media.type === "youtube" ? (
+              <div className="relative aspect-video bg-black">
+                <iframe
+                  src={`https://www.youtube.com/embed/${tweet.media.youtubeId}`}
+                  title="YouTube video player"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full"
+                />
+              </div>
+            ) : tweet.media.type === "video" ? (
+              <div className="relative aspect-video bg-black group">
+                <video
+                  src={tweet.media.url}
+                  poster={tweet.media.thumbnail}
+                  className="w-full h-full object-contain"
+                  controls
+                  preload="metadata"
+                />
+              </div>
+            ) : (
+              <Image
+                src={tweet.media.url || "/placeholder.svg"}
+                alt="Tweet media"
+                width={600}
+                height={400}
+                className="w-full h-auto"
               />
             </div>
           ) : (

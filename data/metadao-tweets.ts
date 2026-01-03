@@ -12,9 +12,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Futarchy is decision-making by prediction markets. MetaDAO is bringing this innovative governance model to Solana. Here's how it works 🧵",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 342,
@@ -36,9 +36,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Traditional governance asks: 'What do you want?' Futarchy asks: 'What do you predict will happen?' This fundamental shift changes everything about how DAOs make decisions.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 289,
@@ -60,9 +60,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Why Solana for futarchy? Speed, low costs, and composability. Our conditional markets settle in seconds, not hours. That's the difference between theory and practice.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 421,
@@ -84,9 +84,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "DAOs fail when sentiment beats data. Futarchy flips this: markets aggregate information better than votes. The crowd doesn't just speak—it predicts outcomes.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 378,
@@ -108,9 +108,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Conditional tokens are the secret sauce. They only have value if a specific outcome occurs. This aligns incentives in ways traditional governance never could.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 295,
@@ -132,9 +132,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "We're not just building governance tools. We're rebuilding how organizations make decisions from first principles. That's the MetaDAO difference.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 456,
@@ -156,9 +156,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Every proposal creates two markets: pass and fail. Traders bet on outcomes. The market with higher value wins. Simple mechanism, powerful results.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 367,
@@ -180,9 +180,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "The best part? You don't need to be an expert. Markets aggregate expertise. Your job is to predict, not pontificate. Let the wisdom of crowds work.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 312,
@@ -204,9 +204,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Skin in the game changes everything. When your predictions have real stakes, noise fades and signal emerges. This is governance evolution.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 389,
@@ -228,9 +228,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "We've processed over 500 proposals through futarchy markets. The data is clear: prediction markets make better decisions than token voting alone.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 534,
@@ -252,9 +252,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Coming soon: cross-DAO prediction markets. Imagine betting on outcomes across the entire Solana ecosystem. That's where we're headed.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 412,
@@ -276,9 +276,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Liquidity providers earn fees on every trade. Participants gain decision rights. DAOs get better outcomes. This is what aligned incentives look like.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 356,
@@ -300,9 +300,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "The oracle problem? We solve it with market resolution. Outcomes are determined by on-chain data, not subjective votes. Trustless and transparent.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 423,
@@ -324,9 +324,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "Building in public, learning in public. Every experiment makes futarchy stronger. Join us in redefining what decentralized governance can be.",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 478,
@@ -348,9 +348,9 @@ export const METADAO_TWEETS: TweetData[] = [
     content:
       "2025 roadmap: Enhanced UX, mobile support, and integration with major Solana protocols. Futarchy is going mainstream. Are you ready?",
     media: {
-      type: "video",
-      url: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-      thumbnail: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+      type: "youtube",
+      url: "https://youtu.be/UIBqNDhc1Rw",
+      youtubeId: "UIBqNDhc1Rw",
     },
     engagement: {
       likes: 591,
