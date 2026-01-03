@@ -2,9 +2,10 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ArrowLeft } from "lucide-react"
+import { ArrowLeft, Quote } from "lucide-react"
 import { CustomTweetCard } from "@/components/custom-tweet-card"
 import { METADAO_TWEETS } from "@/data/metadao-tweets"
+import { Footer } from "@/components/footer"
 
 export default function MetaDAOProject() {
   return (
@@ -51,31 +52,45 @@ export default function MetaDAOProject() {
         </div>
       </section>
 
-      {/* Project Description */}
+      {/* Testimonial Section */}
       <section className="py-20 relative">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="max-w-3xl mx-auto"
+            className="max-w-4xl mx-auto"
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">Our Work</h2>
-            <div className="prose prose-lg max-w-none">
-              <p className="text-lg text-black/70 leading-relaxed mb-6">
-                MetaDAO is exploring new models for decentralized governance on Solana. We worked with the MetaDAO team
-                to help explain futarchy, on-chain decision making, and governance mechanics through clear explainers,
-                animations, and ecosystem-focused content.
-              </p>
-              <p className="text-lg text-black/70 leading-relaxed mb-6">
-                Our work focused on making complex governance concepts understandable without oversimplifying them. By
-                grounding abstract ideas in clear narratives and practical examples, we helped MetaDAO communicate what
-                makes their approach different and why it matters.
-              </p>
-              <p className="text-lg text-black/70 leading-relaxed">
-                The outcome was clearer positioning, stronger understanding across the ecosystem, and content that
-                helped both experienced crypto users and newcomers engage meaningfully with MetaDAO's vision.
-              </p>
+            <div className="relative">
+              {/* Quote Icon */}
+              <div className="absolute -top-4 -left-4 md:-left-8">
+                <Quote className="w-16 h-16 md:w-20 md:h-20 text-blue-100 fill-blue-100" />
+              </div>
+
+              {/* Testimonial Content */}
+              <div className="relative bg-gradient-to-br from-blue-50/50 to-cyan-50/50 rounded-3xl p-8 md:p-12 border border-blue-100/50">
+                <blockquote className="text-lg md:text-xl text-black/80 leading-relaxed mb-8">
+                  I've known Kollan for many years, and MetaDAO has always been one of the most challenging projects in
+                  crypto to communicate clearly. The challenge isn't marketing, it's depth. MetaDAO is building
+                  governance around futarchy and on-chain decision making driven by markets and incentives, ideas that
+                  are unfamiliar even to experienced crypto users. Our work focused on making this legible through clear
+                  explainers and educational content, supported by an animation series that ran as an awareness campaign
+                  across Crypto Twitter to surface the ideas and spark curiosity. As the product matured, MetaDAO emerged
+                  as one of the few projects in 2025 to gain attention for shipping real infrastructure, with growing
+                  interest from teams exploring launches through its framework.
+                </blockquote>
+
+                {/* Author */}
+                <div className="flex items-center gap-4">
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center text-white text-2xl font-bold">
+                    S
+                  </div>
+                  <div>
+                    <div className="font-bold text-lg">Sebastian Montgomery</div>
+                    <div className="text-black/60">Founder, thecommunication.link</div>
+                  </div>
+                </div>
+              </div>
             </div>
           </motion.div>
         </div>
@@ -130,6 +145,8 @@ export default function MetaDAOProject() {
           </motion.div>
         </div>
       </section>
+
+      <Footer />
     </div>
   )
 }
