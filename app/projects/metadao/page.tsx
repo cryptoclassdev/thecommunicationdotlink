@@ -1,5 +1,4 @@
-import { Suspense } from "react"
-import { TweetCard, TweetSkeleton } from "@/components/magicui/tweet-card"
+import { TweetCardClient } from "@/components/magicui/tweet-card-client"
 import MetaDAOClient from "./metadao-client"
 
 const METADAO_TWEET_IDS = [
@@ -25,7 +24,7 @@ export default function MetaDAOProject() {
     <div className="min-h-screen bg-white">
       <MetaDAOClient />
 
-      {/* Social Proof Section with Server-Side Rendered Tweets */}
+      {/* Social Proof Section with Client-Side Rendered Tweets */}
       <section className="py-20 relative overflow-hidden">
         <div className="absolute bottom-0 right-0 w-[50vw] h-[50vw] bg-cyan-100/30 rounded-full blur-[120px] pointer-events-none" />
 
@@ -37,11 +36,9 @@ export default function MetaDAOProject() {
             </p>
           </div>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {METADAO_TWEET_IDS.map((tweetId) => (
-              <Suspense key={tweetId} fallback={<TweetSkeleton />}>
-                <TweetCard id={tweetId} />
-              </Suspense>
+              <TweetCardClient key={tweetId} id={tweetId} />
             ))}
           </div>
         </div>
