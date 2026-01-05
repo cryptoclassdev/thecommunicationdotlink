@@ -35,8 +35,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Futarchy in the wild:",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/frD2hnZp5MM",
+      youtubeId: "frD2hnZp5MM",
     },
     engagement: {
       likes: 112,
@@ -58,8 +58,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Angels Among Us:",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/IYmtlC3hJZw",
+      youtubeId: "IYmtlC3hJZw",
     },
     engagement: {
       likes: 49,
@@ -81,8 +81,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Futarchy Evangelists",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/8SxbXmHfzgE",
+      youtubeId: "8SxbXmHfzgE",
     },
     engagement: {
       likes: 63,
@@ -104,8 +104,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Fairtarchy",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/p9z95bAm6c8",
+      youtubeId: "p9z95bAm6c8",
     },
     engagement: {
       likes: 71,
@@ -127,8 +127,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Famous Families",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/O0-3CsUwbe8",
+      youtubeId: "O0-3CsUwbe8",
     },
     engagement: {
       likes: 39,
@@ -150,8 +150,8 @@ export const METADAO_TWEETS: TweetData[] = [
     content: "Insider Trading",
     media: {
       type: "youtube",
-      url: "https://youtu.be/UIBqNDhc1Rw",
-      youtubeId: "UIBqNDhc1Rw",
+      url: "https://youtu.be/osG_20eu90I",
+      youtubeId: "osG_20eu90I",
     },
     engagement: {
       likes: 139,
