@@ -181,7 +181,7 @@ export default function MetaDAOProject() {
               {/* Desktop: Safari mockup */}
               <div className="hidden sm:block">
                 <SafariMockup
-                  image="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/metadao-link-preview_preview.png"
+                  image="https://res.cloudinary.com/di6zkr8of/image/upload/v1767732340/metadao-hub-screenshot_jap2ng.png"
                   className="w-full"
                 />
               </div>
