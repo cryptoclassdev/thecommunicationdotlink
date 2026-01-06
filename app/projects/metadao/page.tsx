@@ -1,25 +1,25 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Quote, ExternalLink } from "lucide-react"
-import { CustomTweetCard } from "@/components/custom-tweet-card"
-import { METADAO_TWEETS } from "@/data/metadao-tweets"
-import { Footer } from "@/components/footer"
-import { Navbar } from "@/components/navbar"
-import { SafariMockup } from "@/components/ui/safari-mockup"
-import { IPhoneMockup } from "@/components/ui/iphone-mockup"
-import { cn } from "@/lib/utils"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { ArrowLeft, Quote, ExternalLink } from "lucide-react";
+import { CustomTweetCard } from "@/components/custom-tweet-card";
+import { METADAO_TWEETS } from "@/data/metadao-tweets";
+import { Footer } from "@/components/footer";
+import { Navbar } from "@/components/navbar";
+import { SafariMockup } from "@/components/ui/safari-mockup";
+import { IPhoneMockup } from "@/components/ui/iphone-mockup";
+import { cn } from "@/lib/utils";
 
 const tags = [
   { label: "Content Strategy" },
   { label: "Social Media Marketing" },
   { label: "Community Growth" },
-]
+];
 
 // MetaDAO brand color: #FF6B6B
-const tagStyle = "bg-[#FF6B6B]/10 border-[#FF6B6B]/20 text-[#FF6B6B]"
+const tagStyle = "bg-[#FF6B6B]/10 border-[#FF6B6B]/20 text-[#FF6B6B]";
 
 export default function MetaDAOProject() {
   return (
@@ -79,7 +79,8 @@ export default function MetaDAOProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Elevating Web3 governance through strategic content and community engagement
+              Elevating Web3 governance through strategic content and community
+              engagement
             </p>
           </motion.div>
         </div>
@@ -101,7 +102,8 @@ export default function MetaDAOProject() {
               Community Impact
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              See how our content strategy drives engagement and builds community
+              See how our content strategy drives engagement and builds
+              community
             </p>
           </motion.div>
 
@@ -135,20 +137,24 @@ export default function MetaDAOProject() {
               transition={{ duration: 0.5 }}
               className="order-2 lg:order-1"
             >
-              <span className={cn(
-                "inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5",
-                "text-xs sm:text-sm font-medium border",
-                "bg-purple-50 border-purple-100/80 text-purple-600"
-              )}>
-                Website
+              <span
+                className={cn(
+                  "inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5",
+                  "text-xs sm:text-sm font-medium border",
+                  "bg-purple-50 border-purple-100/80 text-purple-600"
+                )}
+              >
+                New
               </span>
               <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 tracking-tight">
                 metadao.link
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8">
-                We designed and built a dedicated landing page to explain MetaDAO&apos;s futarchy-based governance system
-                in clear, accessible terms. The site serves as a central hub for new users to understand the project&apos;s
-                unique approach to on-chain decision making.
+                We designed and built a dedicated landing page to explain
+                MetaDAO&apos;s futarchy-based governance system in clear,
+                accessible terms. The site serves as a central hub for new users
+                to understand the project&apos;s unique approach to on-chain
+                decision making.
               </p>
               <Link
                 href="https://metadao.link"
@@ -181,16 +187,16 @@ export default function MetaDAOProject() {
               {/* Desktop: Safari mockup */}
               <div className="hidden sm:block">
                 <SafariMockup
-                  image="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/metadao-link-preview_preview.png"
+                  image="/images/metadao-hub-screenshot.png"
                   className="w-full"
                 />
               </div>
 
               {/* Mobile: iPhone mockup */}
-              <div className="flex justify-center sm:hidden">
+              <div className="hidden">
                 <IPhoneMockup scale={0.65}>
                   <Image
-                    src="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/metadao-link-mobile_preview.png"
+                    src="/images/metadao-phone-mockup.png"
                     alt="metadao.link mobile preview"
                     fill
                     className="object-cover object-top"
@@ -218,21 +224,28 @@ export default function MetaDAOProject() {
               </div>
 
               {/* Testimonial Content */}
-              <div className={cn(
-                "relative p-6 sm:p-8 md:p-10 lg:p-12",
-                "bg-gradient-to-br from-blue-50/40 to-cyan-50/40",
-                "rounded-2xl sm:rounded-3xl",
-                "border border-blue-100/40"
-              )}>
+              <div
+                className={cn(
+                  "relative p-6 sm:p-8 md:p-10 lg:p-12",
+                  "bg-gradient-to-br from-blue-50/40 to-cyan-50/40",
+                  "rounded-2xl sm:rounded-3xl",
+                  "border border-blue-100/40"
+                )}
+              >
                 <blockquote className="text-base sm:text-lg md:text-xl text-black/70 leading-relaxed mb-6 sm:mb-8">
-                  I've known Kollan for many years, and MetaDAO has always been one of the most challenging projects in
-                  crypto to communicate clearly. The challenge isn't marketing, it's depth. MetaDAO is building
-                  governance around futarchy and on-chain decision making driven by markets and incentives, ideas that
-                  are unfamiliar even to experienced crypto users. Our work focused on making this legible through clear
-                  explainers and educational content, supported by an animation series that ran as an awareness campaign
-                  across Crypto Twitter to surface the ideas and spark curiosity. As the product matured, MetaDAO
-                  emerged as one of the few projects in 2025 to gain attention for shipping real infrastructure, with
-                  growing interest from teams exploring launches through its framework.
+                  I've known Kollan for many years, and MetaDAO has always been
+                  one of the most challenging projects in crypto to communicate
+                  clearly. The challenge isn't marketing, it's depth. MetaDAO is
+                  building governance around futarchy and on-chain decision
+                  making driven by markets and incentives, ideas that are
+                  unfamiliar even to experienced crypto users. Our work focused
+                  on making this legible through clear explainers and
+                  educational content, supported by an animation series that ran
+                  as an awareness campaign across Crypto Twitter to surface the
+                  ideas and spark curiosity. As the product matured, MetaDAO
+                  emerged as one of the few projects in 2025 to gain attention
+                  for shipping real infrastructure, with growing interest from
+                  teams exploring launches through its framework.
                 </blockquote>
 
                 {/* Author - Law of Proximity: grouped elements */}
@@ -246,8 +259,12 @@ export default function MetaDAOProject() {
                     />
                   </div>
                   <div>
-                    <div className="font-semibold text-base sm:text-lg text-black">Sebastian Montgomery</div>
-                    <div className="text-sm sm:text-base text-black/50">Founder, thecommunication.link</div>
+                    <div className="font-semibold text-base sm:text-lg text-black">
+                      Sebastian Montgomery
+                    </div>
+                    <div className="text-sm sm:text-base text-black/50">
+                      Founder, thecommunication.link
+                    </div>
                   </div>
                 </div>
               </div>
@@ -270,14 +287,15 @@ export default function MetaDAOProject() {
               Ready to grow your community and attract real users?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let's create a content strategy that drives real engagement and builds lasting relationships with your audience.
+              Let's create a content strategy that drives real engagement and
+              builds lasting relationships with your audience.
             </p>
             <button
               onClick={() => {
                 if (typeof window !== "undefined" && (window as any).Calendly) {
-                  ;(window as any).Calendly.initPopupWidget({
+                  (window as any).Calendly.initPopupWidget({
                     url: "https://calendly.com/seb-thecommunication/30min",
-                  })
+                  });
                 }
               }}
               className={cn(
@@ -300,5 +318,5 @@ export default function MetaDAOProject() {
 
       <Footer />
     </div>
-  )
+  );
 }
