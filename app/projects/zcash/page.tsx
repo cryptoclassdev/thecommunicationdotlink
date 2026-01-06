@@ -11,16 +11,13 @@ import { Navbar } from "@/components/navbar"
 import { cn } from "@/lib/utils"
 
 const tags = [
-  { label: "Animations", color: "yellow" },
-  { label: "Motion Design", color: "orange" },
-  { label: "Social Content", color: "amber" },
+  { label: "Animations" },
+  { label: "Motion Design" },
+  { label: "Social Content" },
 ]
 
-const tagColors = {
-  yellow: "bg-yellow-50 border-yellow-100/80 text-yellow-600",
-  orange: "bg-orange-50 border-orange-100/80 text-orange-600",
-  amber: "bg-amber-50 border-amber-100/80 text-amber-600",
-}
+// ZCASH brand color: #6B7280
+const tagStyle = "bg-[#6B7280]/10 border-[#6B7280]/20 text-[#6B7280]"
 
 const ZCASH_TWEET_IDS = [
   "2003570900545982505",
@@ -113,7 +110,7 @@ export default function ZcashProject() {
                   className={cn(
                     "px-3 sm:px-4 py-1.5 sm:py-2 rounded-full",
                     "text-xs sm:text-sm font-medium border",
-                    tagColors[tag.color as keyof typeof tagColors]
+                    tagStyle
                   )}
                 >
                   {tag.label}
