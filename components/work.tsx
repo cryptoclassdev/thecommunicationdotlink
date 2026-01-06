@@ -23,7 +23,7 @@ const projects = [
     category: "Explainers, New User Onboarding",
     description:
       "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767027513/met-thumb_aqjzdj.mp4",
+    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767720915/final-meteora-video_ddd58i.mp4",
     poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
     color: "from-[#FF5722]/10 to-[#9C27B0]/10",
     slug: "meteora",
