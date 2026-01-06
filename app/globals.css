@@ -177,14 +177,93 @@
 }
 
 @layer utilities {
-  /* Custom glass utilities for light theme */
+  /* ===== Glass Effects ===== */
   .glass {
-    @apply bg-white/70 backdrop-blur-xl border border-black/10 shadow-[0_8px_32px_0_rgba(0,0,0,0.08)];
+    @apply bg-white/80 backdrop-blur-xl border border-black/[0.06] shadow-sm;
   }
   .glass-hover {
-    @apply hover:bg-white/90 hover:border-black/15 transition-all duration-300;
+    @apply hover:bg-white/90 hover:border-black/[0.08] hover:shadow-lg hover:shadow-black/[0.04] transition-all duration-300;
   }
+
+  /* ===== Text Utilities ===== */
   .text-gradient {
     @apply bg-clip-text text-transparent bg-gradient-to-r from-black via-black/80 to-black/60;
+  }
+
+  /* ===== Focus States - Accessibility ===== */
+  .focus-ring {
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-black/20 focus-visible:ring-offset-2;
+  }
+
+  /* ===== Button Styles - Fitts's Law compliant touch targets ===== */
+  .btn-primary {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply active:scale-[0.98] cursor-pointer;
+    @apply bg-black text-white rounded-xl sm:rounded-2xl;
+    @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+    @apply hover:bg-black/90 focus-visible:ring-black/50;
+    @apply shadow-lg shadow-black/10 hover:shadow-xl hover:shadow-black/15;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center font-semibold transition-all duration-200;
+    @apply focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2;
+    @apply active:scale-[0.98] cursor-pointer;
+    @apply bg-white text-black rounded-xl sm:rounded-2xl;
+    @apply px-6 py-3 sm:px-8 sm:py-4 text-base sm:text-lg;
+    @apply border border-black/[0.08] hover:border-black/[0.12] hover:bg-black/[0.02];
+    @apply focus-visible:ring-black/20;
+  }
+
+  /* ===== Card Utilities ===== */
+  .card-base {
+    @apply bg-white rounded-2xl sm:rounded-3xl border border-black/[0.06];
+    @apply transition-all duration-300;
+  }
+  .card-hover {
+    @apply hover:border-black/[0.1] hover:shadow-lg hover:shadow-black/[0.04];
+    @apply hover:-translate-y-0.5;
+  }
+
+  /* ===== Section Spacing - Consistent vertical rhythm ===== */
+  .section-padding {
+    @apply py-16 sm:py-20 md:py-28 lg:py-32;
+  }
+  .section-padding-sm {
+    @apply py-12 sm:py-16 md:py-20;
+  }
+
+  /* ===== Container Utilities ===== */
+  .container-narrow {
+    @apply max-w-3xl mx-auto px-4 sm:px-6;
+  }
+  .container-default {
+    @apply max-w-6xl mx-auto px-4 sm:px-6;
+  }
+  .container-wide {
+    @apply max-w-7xl mx-auto px-4 sm:px-6;
+  }
+
+  /* ===== Typography Utilities ===== */
+  .heading-display {
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold tracking-tight;
+  }
+  .heading-1 {
+    @apply text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight;
+  }
+  .heading-2 {
+    @apply text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight;
+  }
+  .heading-3 {
+    @apply text-xl sm:text-2xl font-semibold tracking-tight;
+  }
+  .body-large {
+    @apply text-base sm:text-lg md:text-xl leading-relaxed;
+  }
+  .body-default {
+    @apply text-sm sm:text-base leading-relaxed;
+  }
+  .text-muted {
+    @apply text-black/50;
   }
 }
