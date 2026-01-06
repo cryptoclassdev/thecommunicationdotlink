@@ -13,16 +13,13 @@ import { IPhoneMockup } from "@/components/ui/iphone-mockup"
 import { cn } from "@/lib/utils"
 
 const tags = [
-  { label: "Content Strategy", color: "blue" },
-  { label: "Social Media Marketing", color: "cyan" },
-  { label: "Community Growth", color: "purple" },
+  { label: "Content Strategy" },
+  { label: "Social Media Marketing" },
+  { label: "Community Growth" },
 ]
 
-const tagColors = {
-  blue: "bg-blue-50 border-blue-100/80 text-blue-600",
-  cyan: "bg-cyan-50 border-cyan-100/80 text-cyan-600",
-  purple: "bg-purple-50 border-purple-100/80 text-purple-600",
-}
+// MetaDAO brand color: #FF6B6B
+const tagStyle = "bg-[#FF6B6B]/10 border-[#FF6B6B]/20 text-[#FF6B6B]"
 
 export default function MetaDAOProject() {
   return (
@@ -67,7 +64,7 @@ export default function MetaDAOProject() {
                   className={cn(
                     "px-3 sm:px-4 py-1.5 sm:py-2 rounded-full",
                     "text-xs sm:text-sm font-medium border",
-                    tagColors[tag.color as keyof typeof tagColors]
+                    tagStyle
                   )}
                 >
                   {tag.label}

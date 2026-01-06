@@ -9,16 +9,13 @@ import { Navbar } from "@/components/navbar"
 import { cn } from "@/lib/utils"
 
 const tags = [
-  { label: "Explainers", color: "cyan" },
-  { label: "Onboarding", color: "blue" },
-  { label: "Video Content", color: "purple" },
+  { label: "Explainers" },
+  { label: "Onboarding" },
+  { label: "Video Content" },
 ]
 
-const tagColors = {
-  cyan: "bg-cyan-50 border-cyan-100/80 text-cyan-600",
-  blue: "bg-blue-50 border-blue-100/80 text-blue-600",
-  purple: "bg-purple-50 border-purple-100/80 text-purple-600",
-}
+// Meteora brand color: #3B82F6
+const tagStyle = "bg-[#3B82F6]/10 border-[#3B82F6]/20 text-[#3B82F6]"
 
 const videos = [
   {
@@ -96,7 +93,7 @@ export default function MeteoraProject() {
                   className={cn(
                     "px-3 sm:px-4 py-1.5 sm:py-2 rounded-full",
                     "text-xs sm:text-sm font-medium border",
-                    tagColors[tag.color as keyof typeof tagColors]
+                    tagStyle
                   )}
                 >
                   {tag.label}
