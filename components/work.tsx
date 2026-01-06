@@ -1,9 +1,10 @@
 "use client"
 
-import { GlassCard } from "@/components/ui/glass-card"
 import { motion } from "framer-motion"
 import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
+import { cn } from "@/lib/utils"
+import { ArrowUpRight } from "lucide-react"
 
 const projects = [
   {
@@ -13,18 +14,18 @@ const projects = [
       "Helping MetaDAO explain futarchy, governance, and on-chain decision-making through clear explainers, short-form animations, and ecosystem coverage.",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
     poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.jpg",
-    color: "from-[#FF4949]/20 to-[#FF6B6B]/20",
+    color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
     slug: "metadao",
     tags: ["Explainers", "Animations", "Coverage"],
   },
   {
     title: "Meteora",
-    category: "Explainers, New User Onbaording",
+    category: "Explainers, New User Onboarding",
     description:
       "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767027513/met-thumb_aqjzdj.mp4",
     poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
-    color: "from-[#FF5722]/20 to-[#9C27B0]/20",
+    color: "from-[#FF5722]/10 to-[#9C27B0]/10",
     slug: "meteora",
     tags: ["Explainers", "Onboarding"],
   },
@@ -35,7 +36,7 @@ const projects = [
       "Helping Zcash communicate the importance of privacy through clear explainers, narrative-driven content, and culturally relevant animations.",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
     poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
-    color: "from-[#F9A825]/20 to-[#FFEB3B]/20",
+    color: "from-[#F9A825]/10 to-[#FFEB3B]/10",
     slug: "zcash",
     tags: ["Animations", "Motion Design"],
   },
@@ -43,10 +44,10 @@ const projects = [
     title: "Solana Mobile",
     category: "Product Review",
     description:
-      "Providing a detailed, user-focused product review that clearly explains Solana Mobile’s hardware, software, and ecosystem experience.",
+      "Providing a detailed, user-focused product review that clearly explains Solana Mobile's hardware, software, and ecosystem experience.",
     video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
     poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767031550/seeker-thumb_ee3qxj.jpg",
-    color: "from-[#00B8B8]/20 to-[#9B4BFF]/20",
+    color: "from-[#00B8B8]/10 to-[#9B4BFF]/10",
     slug: "solana-mobile",
     tags: ["Product Review", "Video Content"],
     youtubeUrl: "https://youtu.be/ZPReMS8bnlA",
@@ -60,19 +61,15 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Detect if device is mobile
     const checkMobile = () => {
       setIsMobile(window.innerWidth < 768)
     }
-
     checkMobile()
     window.addEventListener('resize', checkMobile)
-
     return () => window.removeEventListener('resize', checkMobile)
   }, [])
 
   useEffect(() => {
-    // Only set up intersection observer on mobile
     if (!isMobile || !containerRef.current || !videoRef.current) return
 
     const observer = new IntersectionObserver(
@@ -95,9 +92,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
           }
         })
       },
-      {
-        threshold: 0.5, // Play when 50% visible
-      }
+      { threshold: 0.5 }
     )
 
     observer.observe(containerRef.current)
@@ -115,7 +110,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
       try {
         await playPromiseRef.current
       } catch (error) {
-        // Ignore AbortError that occurs when play is interrupted
+        // Ignore errors
       }
     }
   }
@@ -126,7 +121,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
         await playPromiseRef.current
         videoRef.current.pause()
       } catch (error) {
-        // Ignore any errors
+        // Ignore errors
       }
     }
   }
@@ -134,7 +129,7 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
   return (
     <div
       ref={containerRef}
-      className="relative h-[300px] md:h-[400px] overflow-hidden"
+      className="relative h-[240px] sm:h-[280px] md:h-[360px] lg:h-[400px] overflow-hidden bg-black/[0.02]"
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
@@ -145,111 +140,124 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
         muted
         loop
         playsInline
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
-      <div className="absolute inset-0 bg-white/20 group-hover:bg-transparent transition-colors duration-500" />
+      {/* Subtle overlay for better contrast */}
+      <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
+  )
+}
+
+function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
+  const CardWrapper = project.youtubeUrl ? 'a' : Link
+  const cardProps = project.youtubeUrl
+    ? { href: project.youtubeUrl, target: "_blank", rel: "noopener noreferrer" }
+    : { href: `/projects/${project.slug}` }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, margin: "-50px" }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+    >
+      <CardWrapper
+        {...cardProps}
+        className={cn(
+          "group block overflow-hidden rounded-2xl sm:rounded-3xl",
+          "bg-white border border-black/[0.06]",
+          "hover:border-black/[0.1] hover:shadow-xl hover:shadow-black/[0.05]",
+          "transition-all duration-500"
+        )}
+      >
+        <div className="grid md:grid-cols-2 gap-0">
+          {/* Content Section - Law of Proximity: grouped elements */}
+          <div className="relative p-6 sm:p-8 md:p-10 lg:p-12 flex flex-col justify-center order-2 md:order-1">
+            {/* Hover gradient background */}
+            <div
+              className={cn(
+                "absolute inset-0 bg-gradient-to-br opacity-0 group-hover:opacity-100",
+                "transition-opacity duration-500",
+                project.color
+              )}
+            />
+
+            <div className="relative z-10">
+              {/* Category label */}
+              <span className="inline-block text-xs sm:text-sm font-medium text-black/40 mb-3 sm:mb-4 uppercase tracking-wider">
+                {project.category}
+              </span>
+
+              {/* Title with arrow indicator */}
+              <div className="flex items-start gap-3 mb-4 sm:mb-5">
+                <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black group-hover:text-black/90 transition-colors">
+                  {project.title}
+                </h3>
+                <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 mt-1 sm:mt-2 text-black/30 group-hover:text-black/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
+              </div>
+
+              {/* Description - optimal reading width */}
+              <p className="text-sm sm:text-base text-black/60 leading-relaxed mb-5 sm:mb-6 max-w-md">
+                {project.description}
+              </p>
+
+              {/* Tags - Fitts's Law: adequate touch targets */}
+              <div className="flex flex-wrap items-center gap-2">
+                {project.tags.map((tag, tagIndex) => (
+                  <span
+                    key={tagIndex}
+                    className={cn(
+                      "px-3 sm:px-4 py-1.5 sm:py-2 rounded-full",
+                      "text-xs sm:text-sm font-medium",
+                      "bg-black/[0.04] border border-black/[0.06]",
+                      "group-hover:bg-black/[0.06] group-hover:border-black/[0.08]",
+                      "transition-colors duration-300"
+                    )}
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Media Section */}
+          <div className="order-1 md:order-2">
+            <ProjectMedia project={project} />
+          </div>
+        </div>
+      </CardWrapper>
+    </motion.div>
   )
 }
 
 export function Work() {
   return (
-    <section id="work" className="py-16 md:py-32 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80vw] h-[80vw] bg-blue-100/40 rounded-full blur-[150px] pointer-events-none" />
+    <section id="work" className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden">
+      {/* Subtle background gradient */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-blue-50/50 rounded-full blur-[200px] pointer-events-none" />
 
-      <div className="container mx-auto px-4 md:px-6 relative z-10">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
+        {/* Section header - Visual hierarchy */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-center mb-12 md:mb-16"
+          transition={{ duration: 0.5 }}
+          className="text-center mb-10 sm:mb-12 md:mb-16"
         >
-          <h2 className="text-balance text-3xl md:text-4xl font-semibold lg:text-5xl">Our Work</h2>
-          <p className="mt-4 text-sm md:text-base text-muted-foreground px-4">
-            A selection of projects where we helped crypto teams clarify their message, shape their narrative, and drive
-            real adoption.
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-black mb-4">
+            Our Work
+          </h2>
+          <p className="text-base sm:text-lg text-black/50 max-w-2xl mx-auto">
+            A selection of projects where we helped crypto teams clarify their message, shape their narrative, and drive real adoption.
           </p>
         </motion.div>
 
-        <div className="space-y-8 md:space-y-20">
+        {/* Projects grid - Consistent spacing */}
+        <div className="space-y-6 sm:space-y-8 md:space-y-10">
           {projects.map((project, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: "-100px" }}
-              transition={{ duration: 0.8 }}
-            >
-              {project.youtubeUrl ? (
-                <a href={project.youtubeUrl} target="_blank" rel="noopener noreferrer">
-                  <GlassCard className="p-0 overflow-hidden group cursor-pointer">
-                    <div className="grid md:grid-cols-2 gap-0">
-                      <div className={`p-6 md:p-12 flex flex-col justify-center relative overflow-hidden`}>
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                        />
-                        <div className="relative z-10">
-                          <span className="text-xs md:text-sm font-medium text-black/50 mb-3 md:mb-4 block uppercase tracking-wider">
-                            {project.category}
-                          </span>
-                          <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                            {project.title}
-                          </h3>
-                          <p className="text-sm md:text-base text-black/70 mb-6 md:mb-8 max-w-md">
-                            {project.description}
-                          </p>
-                          <div className="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm font-medium">
-                            {project.tags.map((tag, tagIndex) => (
-                              <span
-                                key={tagIndex}
-                                className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-black/5 border border-black/10 whitespace-nowrap"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      <ProjectMedia project={project} />
-                    </div>
-                  </GlassCard>
-                </a>
-              ) : (
-                <Link href={`/projects/${project.slug}`}>
-                  <GlassCard className="p-0 overflow-hidden group cursor-pointer">
-                    <div className="grid md:grid-cols-2 gap-0">
-                      <div className={`p-6 md:p-12 flex flex-col justify-center relative overflow-hidden`}>
-                        <div
-                          className={`absolute inset-0 bg-gradient-to-br ${project.color} opacity-0 group-hover:opacity-100 transition-opacity duration-700`}
-                        />
-                        <div className="relative z-10">
-                          <span className="text-xs md:text-sm font-medium text-black/50 mb-3 md:mb-4 block uppercase tracking-wider">
-                            {project.category}
-                          </span>
-                          <h3 className="text-2xl md:text-4xl lg:text-5xl font-bold mb-4 md:mb-6 group-hover:translate-x-2 transition-transform duration-500">
-                            {project.title}
-                          </h3>
-                          <p className="text-sm md:text-base text-black/70 mb-6 md:mb-8 max-w-md">
-                            {project.description}
-                          </p>
-                          <div className="flex flex-wrap items-center gap-2 md:gap-4 text-xs md:text-sm font-medium">
-                            {project.tags.map((tag, tagIndex) => (
-                              <span
-                                key={tagIndex}
-                                className="px-3 md:px-4 py-1.5 md:py-2 rounded-full bg-black/5 border border-black/10 whitespace-nowrap"
-                              >
-                                {tag}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      </div>
-                      <ProjectMedia project={project} />
-                    </div>
-                  </GlassCard>
-                </Link>
-              )}
-            </motion.div>
+            <ProjectCard key={index} project={project} index={index} />
           ))}
         </div>
       </div>

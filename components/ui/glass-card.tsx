@@ -11,12 +11,33 @@ export function GlassCard({ children, className, hoverEffect = true }: GlassCard
   return (
     <div
       className={cn(
-        "glass rounded-3xl p-8 relative overflow-hidden group",
-        hoverEffect && "glass-hover hover:-translate-y-1",
+        // Base styles with consistent border-radius
+        "relative overflow-hidden rounded-2xl sm:rounded-3xl",
+        // Glass effect with improved contrast
+        "bg-white/80 backdrop-blur-xl",
+        "border border-black/[0.06]",
+        // Shadow hierarchy
+        "shadow-sm",
+        // Hover effects - Aesthetic-Usability
+        hoverEffect && [
+          "transition-all duration-300 ease-out",
+          "hover:bg-white/90",
+          "hover:border-black/[0.08]",
+          "hover:shadow-lg hover:shadow-black/[0.04]",
+          "hover:-translate-y-0.5"
+        ],
         className,
       )}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-black/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+      {/* Subtle gradient overlay on hover */}
+      <div
+        className={cn(
+          "absolute inset-0 pointer-events-none",
+          "bg-gradient-to-br from-black/[0.02] to-transparent",
+          "opacity-0 group-hover:opacity-100",
+          "transition-opacity duration-500"
+        )}
+      />
       {children}
     </div>
   )

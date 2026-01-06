@@ -6,6 +6,7 @@ import { BrandMarquee } from "@/components/brand-marquee"
 import { Services } from "@/components/services"
 import { Work } from "@/components/work"
 import { Footer } from "@/components/footer"
+import { cn } from "@/lib/utils"
 
 export default function Home() {
   const handleScheduleCall = () => {
@@ -24,25 +25,42 @@ export default function Home() {
       <Work />
       <Services />
 
-      {/* Call to Action Section */}
-      <section id="contact" className="py-32 relative">
-        <div className="container mx-auto px-6 text-center relative z-10">
-          <h2 className="text-5xl md:text-7xl font-bold mb-8 tracking-tight">
-            Ready to onboard <br />
+      {/* Call to Action Section - Hick's Law: single clear action */}
+      <section id="contact" className="py-20 sm:py-24 md:py-32 lg:py-40 relative overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-t from-blue-50/60 via-transparent to-transparent pointer-events-none" />
+
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center relative z-10">
+          {/* Headline - Typography hierarchy with responsive sizing */}
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-6 sm:mb-8 tracking-tight leading-[1.15]">
+            Ready to onboard{" "}
+            <br className="hidden sm:block" />
             <span className="text-gradient">the next billion?</span>
           </h2>
-          <p className="text-xl text-black/60 mb-12 max-w-2xl mx-auto">
+
+          {/* Subheadline - Optimal reading width */}
+          <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 md:mb-12 max-w-xl mx-auto leading-relaxed">
             Let's collaborate to build something extraordinary. Your vision, our expertise.
           </p>
+
+          {/* Primary CTA - Fitts's Law: large, prominent touch target */}
           <button
             onClick={handleScheduleCall}
-            className="px-10 py-5 bg-black text-white rounded-full font-bold text-xl hover:scale-105 transition-transform shadow-[0_0_40px_-10px_rgba(0,0,0,0.3)] cursor-pointer"
+            className={cn(
+              "inline-flex items-center justify-center",
+              "px-8 sm:px-10 py-4 sm:py-5",
+              "bg-black text-white rounded-2xl",
+              "font-semibold text-base sm:text-lg md:text-xl",
+              "hover:bg-black/90 active:scale-[0.98]",
+              "transition-all duration-200",
+              "shadow-xl shadow-black/10 hover:shadow-2xl hover:shadow-black/15",
+              "cursor-pointer",
+              "focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-4"
+            )}
           >
             Schedule a call
           </button>
         </div>
-
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-[500px] bg-gradient-to-t from-blue-100/40 to-transparent pointer-events-none" />
       </section>
 
       <Footer />
