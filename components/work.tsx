@@ -1,10 +1,10 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Link from "next/link"
-import { useRef, useEffect, useState } from "react"
-import { cn } from "@/lib/utils"
-import { ArrowUpRight } from "lucide-react"
+import { motion } from "framer-motion";
+import Link from "next/link";
+import { useRef, useEffect, useState } from "react";
+import { cn } from "@/lib/utils";
+import { ArrowUpRight } from "lucide-react";
 
 const projects = [
   {
@@ -12,8 +12,10 @@ const projects = [
     category: "Explainers, Animations, New Project Coverage",
     description:
       "Helping MetaDAO explain futarchy, governance, and on-chain decision-making through clear explainers, short-form animations, and ecosystem coverage.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.jpg",
+    video:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
+    poster:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.jpg",
     color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
     slug: "metadao",
     tags: ["Explainers", "Animations", "Coverage"],
@@ -23,8 +25,10 @@ const projects = [
     category: "Explainers, New User Onboarding",
     description:
       "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767027513/met-thumb_aqjzdj.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
+    video:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1767720915/final-meteora-video_ddd58i.mp4",
+    poster:
+      "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
     color: "from-[#FF5722]/10 to-[#9C27B0]/10",
     slug: "meteora",
     tags: ["Explainers", "Onboarding"],
@@ -34,8 +38,10 @@ const projects = [
     category: "Animations",
     description:
       "Helping Zcash communicate the importance of privacy through clear explainers, narrative-driven content, and culturally relevant animations.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+    video:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
+    poster:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
     color: "from-[#F9A825]/10 to-[#FFEB3B]/10",
     slug: "zcash",
     tags: ["Animations", "Motion Design"],
@@ -45,86 +51,130 @@ const projects = [
     category: "Product Review",
     description:
       "Providing a detailed, user-focused product review that clearly explains Solana Mobile's hardware, software, and ecosystem experience.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767031550/seeker-thumb_ee3qxj.jpg",
+    video:
+      "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
+    poster:
+      "https://res.cloudinary.com/di6zkr8of/image/upload/v1767031550/seeker-thumb_ee3qxj.jpg",
     color: "from-[#00B8B8]/10 to-[#9B4BFF]/10",
     slug: "solana-mobile",
     tags: ["Product Review", "Video Content"],
     youtubeUrl: "https://youtu.be/ZPReMS8bnlA",
   },
-]
+];
 
 function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
-  const videoRef = useRef<HTMLVideoElement>(null)
-  const containerRef = useRef<HTMLDivElement>(null)
-  const playPromiseRef = useRef<Promise<void> | null>(null)
-  const [isMobile, setIsMobile] = useState(false)
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const playPromiseRef = useRef<Promise<void> | null>(null);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-    checkMobile()
-    window.addEventListener('resize', checkMobile)
-    return () => window.removeEventListener('resize', checkMobile)
-  }, [])
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
 
   useEffect(() => {
-    if (!isMobile || !containerRef.current || !videoRef.current) return
+    if (!isMobile || !containerRef.current || !videoRef.current) return;
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach(async (entry) => {
           if (entry.isIntersecting && videoRef.current) {
-            playPromiseRef.current = videoRef.current.play()
+            playPromiseRef.current = videoRef.current.play();
             try {
-              await playPromiseRef.current
+              await playPromiseRef.current;
             } catch (error) {
               // Ignore errors
             }
-          } else if (!entry.isIntersecting && videoRef.current && playPromiseRef.current) {
+          } else if (
+            !entry.isIntersecting &&
+            videoRef.current &&
+            playPromiseRef.current
+          ) {
             try {
-              await playPromiseRef.current
-              videoRef.current.pause()
+              await playPromiseRef.current;
+              videoRef.current.pause();
             } catch (error) {
               // Ignore errors
             }
           }
-        })
+        });
       },
       { threshold: 0.5 }
-    )
+    );
 
-    observer.observe(containerRef.current)
+    observer.observe(containerRef.current);
 
     return () => {
       if (containerRef.current) {
-        observer.unobserve(containerRef.current)
+        observer.unobserve(containerRef.current);
       }
-    }
-  }, [isMobile])
+    };
+  }, [isMobile]);
+
+  // Ensure video is loaded and ready
+  useEffect(() => {
+    if (!videoRef.current) return;
+
+    const video = videoRef.current;
+    const handleLoadedData = () => {
+      // Video is ready
+    };
+
+    const handleError = (e: Event) => {
+      console.error("Video load error:", e);
+    };
+
+    video.addEventListener("loadeddata", handleLoadedData);
+    video.addEventListener("error", handleError);
+
+    return () => {
+      video.removeEventListener("loadeddata", handleLoadedData);
+      video.removeEventListener("error", handleError);
+    };
+  }, [project.video]);
 
   const handleMouseEnter = async () => {
     if (videoRef.current && !isMobile) {
-      playPromiseRef.current = videoRef.current.play()
       try {
-        await playPromiseRef.current
+        const video = videoRef.current;
+        // Wait for video to be ready if needed
+        if (video.readyState < 2) {
+          await new Promise((resolve) => {
+            const handleCanPlay = () => {
+              video.removeEventListener("canplay", handleCanPlay);
+              resolve(undefined);
+            };
+            video.addEventListener("canplay", handleCanPlay);
+            video.load();
+          });
+        }
+        // Reset video to start
+        video.currentTime = 0;
+        // Play the video
+        playPromiseRef.current = video.play();
+        await playPromiseRef.current;
       } catch (error) {
         // Ignore errors
+        console.error("Error playing video:", error);
       }
     }
-  }
+  };
 
   const handleMouseLeave = async () => {
     if (videoRef.current && playPromiseRef.current && !isMobile) {
       try {
-        await playPromiseRef.current
-        videoRef.current.pause()
+        await playPromiseRef.current;
+        videoRef.current.pause();
       } catch (error) {
         // Ignore errors
       }
     }
-  }
+  };
 
   return (
     <div
@@ -140,19 +190,26 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
         muted
         loop
         playsInline
+        preload="metadata"
         className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
       />
       {/* Subtle overlay for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
-  )
+  );
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const CardWrapper = project.youtubeUrl ? 'a' : Link
+function ProjectCard({
+  project,
+  index,
+}: {
+  project: (typeof projects)[0];
+  index: number;
+}) {
+  const CardWrapper = project.youtubeUrl ? "a" : Link;
   const cardProps = project.youtubeUrl
     ? { href: project.youtubeUrl, target: "_blank", rel: "noopener noreferrer" }
-    : { href: `/projects/${project.slug}` }
+    : { href: `/projects/${project.slug}` };
 
   return (
     <motion.div
@@ -228,12 +285,15 @@ function ProjectCard({ project, index }: { project: typeof projects[0]; index: n
         </div>
       </CardWrapper>
     </motion.div>
-  )
+  );
 }
 
 export function Work() {
   return (
-    <section id="work" className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden">
+    <section
+      id="work"
+      className="py-16 sm:py-20 md:py-28 lg:py-32 relative overflow-hidden"
+    >
       {/* Subtle background gradient */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[100vw] h-[100vw] bg-blue-50/50 rounded-full blur-[200px] pointer-events-none" />
 
@@ -250,7 +310,8 @@ export function Work() {
             Our Work
           </h2>
           <p className="text-base sm:text-lg text-black/50 max-w-2xl mx-auto">
-            A selection of projects where we helped crypto teams clarify their message, shape their narrative, and drive real adoption.
+            A selection of projects where we helped crypto teams clarify their
+            message, shape their narrative, and drive real adoption.
           </p>
         </motion.div>
 
@@ -262,5 +323,5 @@ export function Work() {
         </div>
       </div>
     </section>
-  )
+  );
 }
