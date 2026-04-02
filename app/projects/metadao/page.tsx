@@ -11,6 +11,7 @@ import { Navbar } from "@/components/navbar"
 import { SafariMockup } from "@/components/ui/safari-mockup"
 import { IPhoneMockup } from "@/components/ui/iphone-mockup"
 import { cn } from "@/lib/utils"
+import { ASSETS } from "@/lib/assets"
 
 const tags = [
   { label: "Content Strategy" },
@@ -181,7 +182,7 @@ export default function MetaDAOProject() {
               {/* Desktop: Safari mockup */}
               <div className="hidden sm:block">
                 <SafariMockup
-                  image="https://res.cloudinary.com/di6zkr8of/image/upload/v1767732340/metadao-hub-screenshot_jap2ng.png"
+                  image={ASSETS.projects.metadaoHubScreenshot}
                   className="w-full"
                 />
               </div>
@@ -190,7 +191,7 @@ export default function MetaDAOProject() {
               <div className="flex justify-center sm:hidden">
                 <IPhoneMockup scale={0.65}>
                   <Image
-                    src="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/metadao-link-mobile_preview.png"
+                    src={ASSETS.projects.metadaoLinkMobilePreview}
                     alt="metadao.link mobile preview"
                     fill
                     className="object-cover object-top"
@@ -239,7 +240,7 @@ export default function MetaDAOProject() {
                 <div className="flex items-center gap-3 sm:gap-4">
                   <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden relative flex-shrink-0 border border-black/[0.06]">
                     <Image
-                      src="https://res.cloudinary.com/di6zkr8of/image/upload/v1764583245/seb-pfp_bs2cit.png"
+                      src={ASSETS.team.seb}
                       alt="Sebastian Montgomery"
                       fill
                       className="object-cover"
