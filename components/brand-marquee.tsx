@@ -1,50 +1,51 @@
 import { Marquee } from "@/components/ui/marquee"
 import Image from "next/image"
+import { ASSETS } from "@/lib/assets"
 
 const brands = [
   {
     name: "Solana",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031556/Solana-logo_aneqxh.png",
+    logo: ASSETS.brands.solana,
     alt: "Solana blockchain platform logo",
   },
   {
     name: "MetaDAO",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/metadao_ijxbil.svg",
+    logo: ASSETS.brands.metadao,
     alt: "MetaDAO decentralized governance platform logo",
   },
   {
     name: "Meteora",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/meteora-white_povjit.svg",
+    logo: ASSETS.brands.meteora,
     alt: "Meteora DeFi protocol logo",
   },
   {
     name: "Claynosaurz",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/claynosaurz_logo_lnsynj.svg",
+    logo: ASSETS.brands.claynosaurz,
     alt: "Claynosaurz NFT collection logo",
   },
   {
     name: "Jupiter",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/logo-with-text-bright_wsyf02.svg",
+    logo: ASSETS.brands.jupiter,
     alt: "Jupiter aggregator platform logo",
   },
   {
     name: "Sui",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031080/sui-logo_jlozl7.jpg",
+    logo: ASSETS.brands.sui,
     alt: "sui logo",
   },
   {
     name: "Fogo",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764823177/fogo_kwdw4w.jpg",
+    logo: ASSETS.brands.fogo,
     alt: "Fogo platform logo",
   },
   {
     name: "validator",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1764828145/validator-logo_owdvbq.svg",
+    logo: ASSETS.brands.validator,
     alt: "validator logo"
   },
   {
     name: "genzcash",
-    logo: "https://res.cloudinary.com/di6zkr8of/image/upload/v1765031291/genzcash_usvrai.jpg",
+    logo: ASSETS.brands.genzcash,
     alt: "genzcash logo"
   }
 ]
