@@ -6,7 +6,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Welcome to MetaDAO (A Futard Origin Story):",
@@ -29,7 +29,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Futarchy in the wild:",
@@ -52,7 +52,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Angels Among Us:",
@@ -75,7 +75,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Futarchy Evangelists",
@@ -98,7 +98,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Fairtarchy",
@@ -121,7 +121,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Famous Families",
@@ -144,7 +144,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Insider Trading",
@@ -167,7 +167,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Life on the Front Lines",
@@ -190,7 +190,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Exercising Restraint",
@@ -213,7 +213,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "The Scandal",
@@ -236,7 +236,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "The Learning Curve",
@@ -259,7 +259,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "The Trading Bot",
@@ -282,7 +282,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Being a Celebrity",
@@ -305,7 +305,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "The Halloween Special",
@@ -328,7 +328,7 @@ export const METADAO_TWEETS: TweetData[] = [
     author: {
       name: "MetaDAO",
       username: "MetaDAOProject",
-      avatar: "/public/images/meta-icon.jpg",
+      avatar: "/meta-icon.jpg",
       verified: true,
     },
     content: "Living in the Futarchy",
