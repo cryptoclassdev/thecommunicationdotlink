@@ -1,5 +1,6 @@
 "use client"
 import Link from "next/link"
+import { ASSETS } from "@/lib/assets"
 
 export function Hero() {
   return (
@@ -14,7 +15,7 @@ export function Hero() {
           className="absolute inset-0 w-full h-full object-cover"
         >
           <source
-            src="https://res.cloudinary.com/di6zkr8of/video/upload/v1764819398/solana-seeker-seb_nbbogz.mp4"
+            src={ASSETS.videos.heroSolanaSeeker}
             type="video/mp4"
           />
         </video>

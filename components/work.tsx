@@ -5,6 +5,7 @@ import Link from "next/link"
 import { useRef, useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
+import { ASSETS } from "@/lib/assets"
 
 const projects = [
   {
@@ -12,8 +13,8 @@ const projects = [
     category: "Explainers, Animations, New Project Coverage",
     description:
       "Helping MetaDAO explain futarchy, governance, and on-chain decision-making through clear explainers, short-form animations, and ecosystem coverage.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010051/metadao-thumb_kaqxir.jpg",
+    video: ASSETS.videos.workMetadaoThumb,
+    poster: ASSETS.posters.metadaoThumb,
     color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
     slug: "metadao",
     tags: ["Explainers", "Animations", "Coverage"],
@@ -23,8 +24,8 @@ const projects = [
     category: "Explainers, New User Onboarding",
     description:
       "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1767720915/final-meteora-video_ddd58i.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767027816/P7WLQ9zM3O0-HD_nttmem.jpg",
+    video: ASSETS.videos.workMeteora,
+    poster: ASSETS.posters.meteoraPoster,
     color: "from-[#FF5722]/10 to-[#9C27B0]/10",
     slug: "meteora",
     tags: ["Explainers", "Onboarding"],
@@ -34,8 +35,8 @@ const projects = [
     category: "Animations",
     description:
       "Helping Zcash communicate the importance of privacy through clear explainers, narrative-driven content, and culturally relevant animations.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010080/zcash-thumb_x2k9mn.jpg",
+    video: ASSETS.videos.workZcashThumb,
+    poster: ASSETS.posters.zcashThumb,
     color: "from-[#F9A825]/10 to-[#FFEB3B]/10",
     slug: "zcash",
     tags: ["Animations", "Motion Design"],
@@ -45,8 +46,8 @@ const projects = [
     category: "Product Review",
     description:
       "Providing a detailed, user-focused product review that clearly explains Solana Mobile's hardware, software, and ecosystem experience.",
-    video: "https://res.cloudinary.com/di6zkr8of/video/upload/v1765010165/solana-mobile_utrgao.mp4",
-    poster: "https://res.cloudinary.com/di6zkr8of/image/upload/v1767031550/seeker-thumb_ee3qxj.jpg",
+    video: ASSETS.videos.workSolanaMobile,
+    poster: ASSETS.posters.seekerThumb,
     color: "from-[#00B8B8]/10 to-[#9B4BFF]/10",
     slug: "solana-mobile",
     tags: ["Product Review", "Video Content"],
