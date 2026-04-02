@@ -35,7 +35,7 @@ export function CustomTweetCard({ tweet }: CustomTweetCardProps) {
         <div className="flex items-start gap-3 flex-1 min-w-0">
           {/* Profile Picture */}
           <div className="relative w-12 h-12 rounded-full overflow-hidden flex-shrink-0 bg-gray-200">
-            <Image src="/images/meta-icon.jpg" alt={tweet.author.name} fill className="object-cover" sizes="48px" />
+            <Image src="/meta-icon.jpg" alt={tweet.author.name} fill className="object-cover" sizes="48px" />
           </div>
 
           {/* Author Info */}
