@@ -29,7 +29,7 @@ export const ASSETS = {
   },
 
   team: {
-    seb: `${BLOB_BASE}/images/team/seb-pfp.png`,
+    seb: `${BLOB_BASE}/images/team/seb-pfp.jpg`,
     chris: `${BLOB_BASE}/images/team/chris-dp.png`,
     pedro: `${BLOB_BASE}/images/team/pedro.png`,
     bruno: `${BLOB_BASE}/images/team/bruno-dp.jpg`,
