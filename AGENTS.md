@@ -6,16 +6,27 @@ This file provides guidance to Claude Code (claude.ai/code) and Cursor IDE (http
 
 ```bash
 pnpm dev          # Start dev server (Next.js)
-pnpm build        # Production build (TS errors ignored via next.config.mjs)
-pnpm start        # Start production server
+pnpm build        # Static export build → out/ directory
 pnpm lint         # Run ESLint
 ```
 
-Package manager: **pnpm**
+Package manager: **pnpm** (v8.x — lockfile v6 format)
+
+## Deployment
+
+**Dual deployment**: Vercel (automatic) + Hostinger FTP (via GitHub Actions).
+
+On every push to `main`, `.github/workflows/deploy.yml` runs:
+1. `pnpm build` produces a static export (`output: 'export'` in `next.config.mjs`)
+2. `out/` is uploaded to the FTP server via `SamKirkland/FTP-Deploy-Action`
+
+**Critical: the `images/` directory on the FTP server contains project assets unrelated to this codebase.** The CI excludes `images/**` from sync. Never place files in `public/images/` — this directory must not exist in the build output to avoid overwriting server assets.
+
+GitHub Secrets required: `FTP_HOST`, `FTP_USERNAME`, `FTP_PASSWORD`.
 
 ## Architecture
 
-Next.js 16 App Router site for a crypto communications agency ("thecommunication.link"). Deployed on Vercel, originally scaffolded with v0.app.
+Next.js 16 App Router static site for a crypto communications agency ("thecommunication.link"). Originally scaffolded with v0.app.
 
 ### Routing
 
@@ -39,7 +50,7 @@ Tailwind CSS v4 with OKLCH color system defined in `app/globals.css` as CSS cust
 
 ### Media
 
-Videos and images are hosted on **Vercel Blob** (`lixp9d63v9mlfewl.public.blob.vercel-storage.com`). All asset URLs are centralized in `lib/assets.ts`. Videos use native HTML5 `<video>` with Intersection Observer for mobile play/pause. Images use `next/image` with `remotePatterns` configured for the Blob domain in `next.config.mjs`.
+Videos and images are hosted on **Vercel Blob** (`lixp9d63v9mlfewl.public.blob.vercel-storage.com`). All asset URLs are centralized in `lib/assets.ts` — update this single file when adding or changing assets. Videos use native HTML5 `<video>` with Intersection Observer for mobile play/pause. Images use `next/image` with `unoptimized: true` (required for static export).
 
 ### External Integrations
 
