@@ -27,11 +27,10 @@ const projects: Project[] = [
     category: "Launch Communications",
     description:
       "Helping Zinc launch on Solana with clear messaging and launch communications. One month in, Zinc ranked #1 in Arcium confidential compute, #3 in app revenue across Solana, and #2 in revenue routed to holders.",
-    image: "/work/zinc-rankings.jpg",
+    image: "/work/zinc-miners.jpg",
     color: "from-[#FF7A1A]/10 to-[#FFB347]/10",
     slug: "zinc",
     tags: ["Launch", "Communications"],
-    externalUrl: "https://zinc.cash",
   },
   {
     title: "MetaDAO",
