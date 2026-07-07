@@ -7,7 +7,32 @@ import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import { ASSETS } from "@/lib/assets"
 
-const projects = [
+type Project = {
+  title: string
+  category: string
+  description: string
+  video?: string
+  poster?: string
+  image?: string
+  color: string
+  slug: string
+  tags: string[]
+  youtubeUrl?: string
+  externalUrl?: string
+}
+
+const projects: Project[] = [
+  {
+    title: "Zinc.cash",
+    category: "Launch Communications",
+    description:
+      "Helping Zinc launch on Solana with clear messaging and launch communications. One month in, Zinc ranked #1 in Arcium confidential compute, #3 in app revenue across Solana, and #2 in revenue routed to holders.",
+    image: "/work/zinc-rankings.jpg",
+    color: "from-[#FF7A1A]/10 to-[#FFB347]/10",
+    slug: "zinc",
+    tags: ["Launch", "Communications"],
+    externalUrl: "https://zinc.cash",
+  },
   {
     title: "MetaDAO",
     category: "Explainers, Animations, New Project Coverage",
@@ -55,7 +80,7 @@ const projects = [
   },
 ]
 
-function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
+function ProjectMedia({ project }: { project: Project }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const playPromiseRef = useRef<Promise<void> | null>(null)
@@ -134,25 +159,34 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <video
-        ref={videoRef}
-        src={project.video}
-        poster={project.poster}
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-      />
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} highlights`}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          src={project.video}
+          poster={project.poster}
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      )}
       {/* Subtle overlay for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   )
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const CardWrapper = project.youtubeUrl ? 'a' : Link
-  const cardProps = project.youtubeUrl
-    ? { href: project.youtubeUrl, target: "_blank", rel: "noopener noreferrer" }
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const externalUrl = project.youtubeUrl ?? project.externalUrl
+  const CardWrapper = externalUrl ? 'a' : Link
+  const cardProps = externalUrl
+    ? { href: externalUrl, target: "_blank", rel: "noopener noreferrer" }
     : { href: `/projects/${project.slug}` }
 
   return (
