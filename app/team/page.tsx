@@ -54,7 +54,7 @@ const teamMembers = [
     name: "Sublime",
     role: "Developer",
     image: ASSETS.team.sublime,
-    bio: "Sublime is our developer. Sites, tools, whatever the work calls for, Sublime builds it and keeps it running.",
+    bio: "Sublime is a full-stack engineer focused on crypto. He builds Solana applications, wallet and payment integrations, trading tools, and AI-agent tooling, and he likes owning a product from first concept through to production.",
     accent: "purple",
   },
 ]
