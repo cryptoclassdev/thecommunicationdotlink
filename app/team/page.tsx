@@ -43,6 +43,27 @@ const teamMembers = [
     bio: "An animator and concept artist with a bachelor's in animation and a master's in concept art, previously at Adobe France. Luca makes the short-form animations for projects like MetaDAO and Zcash, in styles that borrow from Family Guy and Rick and Morty. He leads animation on the team.",
     accent: "blue",
   },
+  {
+    name: "Nicole",
+    role: "BD Lead",
+    image: ASSETS.team.nicole,
+    bio: "Nicole leads business development. She's crypto native, and her specialty is expansion: finding the deals and partnerships that grow what you're building.",
+    accent: "indigo",
+  },
+  {
+    name: "Tyler",
+    role: "Market Researcher",
+    image: ASSETS.team.tyler,
+    bio: "Tyler follows the markets full time and does the technical analysis. If something moved overnight, he knows why by morning.",
+    accent: "blue",
+  },
+  {
+    name: "Sublime",
+    role: "Developer",
+    image: ASSETS.team.sublime,
+    bio: "Sublime is our developer. Sites, tools, whatever the work calls for, Sublime builds it and keeps it running.",
+    accent: "purple",
+  },
 ]
 
 const accentColors = {

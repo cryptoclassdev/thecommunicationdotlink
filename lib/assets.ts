@@ -34,6 +34,10 @@ export const ASSETS = {
     pedro: `${BLOB_BASE}/images/team/pedro.png`,
     bruno: `${BLOB_BASE}/images/team/bruno-dp.jpg`,
     luca: `${BLOB_BASE}/images/team/hfp-pfp.jpg`,
+    // Local assets in public/team/ — replace the file to update the photo
+    nicole: "/team/nicole.jpg",
+    tyler: "/team/tyler.jpg",
+    sublime: "/team/sublime.jpg",
   },
 
   projects: {
