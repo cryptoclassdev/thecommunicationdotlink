@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { cn } from "@/lib/utils"
+import { SocialLinks } from "@/components/social-links"
 
 export function Footer() {
   const currentYear = new Date().getFullYear()
@@ -32,8 +33,9 @@ export function Footer() {
               thecommunication<span className="text-blue-600">.</span>link
             </Link>
             <p className="text-sm sm:text-base text-black/50 leading-relaxed max-w-xs">
-              Your product is powerful. We make it understood, remembered, and adopted.
+              Your product is powerful. We make sure people understand it.
             </p>
+            <SocialLinks className="mt-5" />
           </div>
 
           {/* Sitemap Column - Miller's Law: chunked links */}

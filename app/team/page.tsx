@@ -12,7 +12,7 @@ const teamMembers = [
     name: "Sebastian Montgomery",
     role: "Founder",
     image: ASSETS.team.seb,
-    bio: "A prominent voice in the Solana ecosystem who has produced more than 1,000 educational videos and continues to lead the next phase of growth by advancing global understanding of decentralized infrastructure.",
+    bio: "Seb has produced more than 1,000 videos explaining Solana and the projects built on it. He started thecommunication.link to do that work for teams directly.",
     accent: "blue",
   },
   {
@@ -26,22 +26,36 @@ const teamMembers = [
     name: "Pedro",
     role: "Lead Editor & Artist",
     image: ASSETS.team.pedro,
-    bio: "Pedro leads the creative production, crafting visually engaging content that informs, inspires, and connects with audiences. His work focuses on expanding the reach of thecommunication.link and driving broader awareness and adoption of the Solana ecosystem through high-impact storytelling and design.",
+    bio: "Pedro runs creative production. He decides how a piece should look before it ships, and most of what you see on our channels passed through his hands first.",
     accent: "indigo",
   },
   {
     name: "Bruno",
     role: "Content Creator",
     image: ASSETS.team.bruno,
-    bio: "A versatile graphic designer and visual creative with a strong eye for detail and composition. Bruno produces high-quality artwork, edits video content, and supports social content creation, bringing a well-rounded skill set to projects that require both visual polish and creative flexibility.",
+    bio: "Bruno is a graphic designer who also edits video and makes social content. Good eye, quick turnaround, comfortable moving between formats.",
     accent: "pink",
   },
   {
-    name: "Luca",
-    role: "Animator",
-    image: ASSETS.team.luca,
-    bio: "An animator and concept artist with a bachelor's degree in animation and a master's degree in concept art. Previously part of Adobe France, Luca now creates short-form crypto animations and edits for projects like MetaDAO and Zcash, specialising in stylised formats inspired by Family Guy and Rick and Morty. Within the team, he leads animation execution, visual style development, and game and design concepts.",
+    name: "Nicole",
+    role: "BD Lead",
+    image: ASSETS.team.nicole,
+    bio: "Nicole leads business development. She's crypto native, and her specialty is expansion: finding the deals and partnerships that grow what you're building.",
+    accent: "indigo",
+  },
+  {
+    name: "Tyler",
+    role: "Market Researcher",
+    image: ASSETS.team.tyler,
+    bio: "Tyler follows the markets full time and does the technical analysis. If something moved overnight, he knows why by morning.",
     accent: "blue",
+  },
+  {
+    name: "Sublime",
+    role: "Developer",
+    image: ASSETS.team.sublime,
+    bio: "Sublime is a full-stack engineer focused on crypto. He builds Solana applications, wallet and payment integrations, trading tools, and AI-agent tooling, and he likes owning a product from first concept through to production.",
+    accent: "purple",
   },
 ]
 
@@ -156,7 +170,7 @@ export default function TeamPage() {
                 <span className="text-gradient">The Team</span>
               </h1>
               <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto leading-relaxed">
-                A team dedicated to making complex crypto systems understandable, usable, and worth paying attention to.
+                We make complex crypto systems understandable. That's the whole job.
               </p>
             </motion.div>
           </div>
@@ -192,7 +206,7 @@ export default function TeamPage() {
                 Want to work with us?
               </h2>
               <p className="text-sm sm:text-base md:text-lg text-black/50 mb-6 sm:mb-8 max-w-xl mx-auto leading-relaxed">
-                We're always looking for talented people to join our mission of making crypto communication accessible to everyone.
+                If you explain things well, or you animate, we'd like to hear from you.
               </p>
               <button
                 onClick={() => {

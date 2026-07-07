@@ -31,7 +31,7 @@ const videos = [
   {
     id: "GF3ikHIpmAk",
     title: "Essential Strategies for Smart Investing",
-    description: "Fundamental tips for smart investing in the Meteora ecosystem.",
+    description: "Fundamental tips for investing through Meteora",
   },
   {
     id: "4r93clMGEg8",
@@ -45,8 +45,8 @@ const videos = [
   },
   {
     id: "NYcXHy4z9K4",
-    title: "Meteora Ecosystem",
-    description: "Exploring the Meteora platform",
+    title: "$MET Launch Explainer",
+    description: "What the $MET launch means for Jupiter stakers",
   },
 ]
 
@@ -108,7 +108,7 @@ export default function MeteoraProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Helping users understand DLMMs and liquidity provisioning through clear, structured content
+              Onboarding content for Meteora: how DLMM pools work, and how to provide liquidity
             </p>
           </motion.div>
         </div>
@@ -126,18 +126,16 @@ export default function MeteoraProject() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 tracking-tight">Our Work</h2>
             <div className="space-y-4 sm:space-y-5">
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                Meteora is redefining DeFi liquidity on Solana with Dynamic Liquidity Market Makers (DLMMs). We
-                partnered with Meteora to create educational content that makes complex liquidity concepts accessible to
-                both new and experienced users.
+                Meteora runs Dynamic Liquidity Market Makers, or DLMMs, on Solana. They&apos;re powerful, and they&apos;re
+                confusing the first time you meet one. Meteora brought us in to fix the second part.
               </p>
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                Our approach focused on breaking down sophisticated DeFi mechanics into clear, digestible explainers.
-                Through structured onboarding content and video tutorials, we helped users understand how to effectively
-                provide liquidity and navigate the Meteora platform.
+                We made step-by-step video tutorials that take a new user from zero to their first pool. What a DLMM
+                actually is, how to put money in, and how to take it back out again.
               </p>
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                The result was a comprehensive content library that empowered users to engage confidently with Meteora's
-                innovative liquidity solutions, driving platform adoption and user success.
+                The videos now sit as a standing library. Someone lands on Meteora, gets stuck, watches one, and gets
+                unstuck. That&apos;s the job.
               </p>
             </div>
           </motion.div>
@@ -158,7 +156,7 @@ export default function MeteoraProject() {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 tracking-tight">Content Library</h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              Explore our comprehensive video guides and explainers for Meteora
+              The video guides we made for Meteora
             </p>
           </motion.div>
 
@@ -200,7 +198,7 @@ export default function MeteoraProject() {
               Ready to educate your users?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let's create clear, engaging content that helps your community understand and adopt your product.
+              If users find your product confusing, send us the confusing part. We'll make it make sense.
             </p>
             <button
               onClick={() => {

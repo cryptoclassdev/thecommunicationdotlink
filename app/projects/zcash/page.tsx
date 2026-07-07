@@ -125,7 +125,7 @@ export default function ZcashProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Bringing privacy-first blockchain to life through engaging animations and social content
+              Animations for Zcash that make the case for financial privacy
             </p>
           </motion.div>
         </div>
@@ -143,18 +143,16 @@ export default function ZcashProject() {
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 tracking-tight">Our Work</h2>
             <div className="space-y-4 sm:space-y-5">
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                ZCASH is pioneering privacy technology in blockchain. We partnered with the team to create
-                engaging animations and social content that makes privacy-preserving technology accessible and
-                understandable for a broader audience.
+                Zcash builds privacy technology, and privacy is a hard thing to make people care about before they
+                need it. Our job was to make the argument watchable.
               </p>
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                Our work focused on visual storytelling that captures attention while educating viewers about the
-                importance of financial privacy. Through creative motion design and compelling narratives, we helped
-                ZCASH communicate complex cryptographic concepts in an engaging way.
+                We made short animated pieces for social. Character-driven, styled after the cartoons people already
+                watch, each one carrying a single idea about why financial privacy matters.
               </p>
               <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                The result was a collection of shareable content that drives awareness, builds understanding, and
-                positions ZCASH as a leader in privacy-preserving blockchain technology.
+                People share a forty-second cartoon. They do not share a whitepaper. That was the bet, and the
+                pieces travelled.
               </p>
             </div>
           </motion.div>
@@ -173,7 +171,7 @@ export default function ZcashProject() {
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 tracking-tight">Featured Content</h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              See how our animations bring ZCASH's privacy mission to life
+              A few of the animations we made for Zcash
             </p>
           </motion.div>
 
@@ -254,10 +252,10 @@ export default function ZcashProject() {
             className="text-center"
           >
             <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold mb-4 sm:mb-6 tracking-tight">
-              Ready to bring your vision to life?
+              Got something hard to explain?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let's create compelling animations and content that captures attention and communicates your unique value proposition.
+              Animation is how we make dry ideas watchable. Book a call and show us what you're working on.
             </p>
             <button
               onClick={() => {

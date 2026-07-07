@@ -1,6 +1,7 @@
 "use client"
 import Link from "next/link"
 import { ASSETS } from "@/lib/assets"
+import { SocialLinks } from "@/components/social-links"
 
 export function Hero() {
   return (
@@ -37,8 +38,14 @@ export function Hero() {
             <span className="text-black/80">is where crypto teams find their voice.</span>
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            <span className="text-black/60">We turn innovation into clear communication that attracts users.</span>
+            <span className="text-black/60">We explain what you built so people actually use it.</span>
           </p>
+
+          {/* Social links - follow Seb's channels */}
+          <div className="mt-8 sm:mt-10 flex items-center gap-4">
+            <span className="text-sm font-medium text-black/40 uppercase tracking-wider">Follow our work</span>
+            <SocialLinks />
+          </div>
         </div>
       </div>
     </section>

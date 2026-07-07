@@ -40,7 +40,7 @@ export default function Home() {
 
           {/* Subheadline - Optimal reading width */}
           <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 md:mb-12 max-w-xl mx-auto leading-relaxed">
-            Let's collaborate to build something extraordinary. Your vision, our expertise.
+            You built the product. We'll help people understand it. Book a call and tell us what you're working on.
           </p>
 
           {/* Primary CTA - Fitts's Law: large, prominent touch target */}

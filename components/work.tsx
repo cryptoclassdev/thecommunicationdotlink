@@ -7,12 +7,46 @@ import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import { ASSETS } from "@/lib/assets"
 
-const projects = [
+type Project = {
+  title: string
+  category: string
+  description: string
+  video?: string
+  poster?: string
+  image?: string
+  color: string
+  slug: string
+  tags: string[]
+  youtubeUrl?: string
+  externalUrl?: string
+}
+
+const projects: Project[] = [
+  {
+    title: "Zinc.cash",
+    category: "Launch Communications",
+    description:
+      "We ran communications for Zinc's launch on Solana. One month in, Zinc sat at #3 in app revenue across Solana and #1 in confidential compute on Arcium.",
+    image: "/work/zinc-miners.jpg",
+    color: "from-[#FF7A1A]/10 to-[#FFB347]/10",
+    slug: "zinc",
+    tags: ["Launch", "Communications"],
+  },
+  {
+    title: "Jupiter",
+    category: "Video Content, User Onboarding",
+    description:
+      "Onboarding videos made through the Jupiter Uplink program. Step-by-step tutorials that take a viewer from curious to using Jupiter's products, perps to JupSOL.",
+    image: "/work/jupiter-uplink.jpg",
+    color: "from-[#00BEF0]/10 to-[#C7F284]/10",
+    slug: "jupiter",
+    tags: ["Video Content", "Onboarding"],
+  },
   {
     title: "MetaDAO",
     category: "Explainers, Animations, New Project Coverage",
     description:
-      "Helping MetaDAO explain futarchy, governance, and on-chain decision-making through clear explainers, short-form animations, and ecosystem coverage.",
+      "MetaDAO runs governance through prediction markets, which takes some explaining. We made the explainers, plus an animation series that ran across Crypto Twitter.",
     video: ASSETS.videos.workMetadaoThumb,
     poster: ASSETS.posters.metadaoThumb,
     color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
@@ -23,7 +57,7 @@ const projects = [
     title: "Meteora",
     category: "Explainers, New User Onboarding",
     description:
-      "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
+      "Explainers and onboarding videos for Meteora. New users learn what a DLMM pool is and how to provide liquidity without wading through docs.",
     video: ASSETS.videos.workMeteora,
     poster: ASSETS.posters.meteoraPoster,
     color: "from-[#FF5722]/10 to-[#9C27B0]/10",
@@ -34,7 +68,7 @@ const projects = [
     title: "ZCASH",
     category: "Animations",
     description:
-      "Helping Zcash communicate the importance of privacy through clear explainers, narrative-driven content, and culturally relevant animations.",
+      "Animation work for Zcash. Short pieces that make the case for financial privacy and hold up on a social feed.",
     video: ASSETS.videos.workZcashThumb,
     poster: ASSETS.posters.zcashThumb,
     color: "from-[#F9A825]/10 to-[#FFEB3B]/10",
@@ -45,7 +79,7 @@ const projects = [
     title: "Solana Mobile",
     category: "Product Review",
     description:
-      "Providing a detailed, user-focused product review that clearly explains Solana Mobile's hardware, software, and ecosystem experience.",
+      "A full review of the Solana Seeker phone. The hardware, the software, and whether it's worth buying.",
     video: ASSETS.videos.workSolanaMobile,
     poster: ASSETS.posters.seekerThumb,
     color: "from-[#00B8B8]/10 to-[#9B4BFF]/10",
@@ -55,7 +89,7 @@ const projects = [
   },
 ]
 
-function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
+function ProjectMedia({ project }: { project: Project }) {
   const videoRef = useRef<HTMLVideoElement>(null)
   const containerRef = useRef<HTMLDivElement>(null)
   const playPromiseRef = useRef<Promise<void> | null>(null)
@@ -134,25 +168,34 @@ function ProjectMedia({ project }: { project: (typeof projects)[0] }) {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <video
-        ref={videoRef}
-        src={project.video}
-        poster={project.poster}
-        muted
-        loop
-        playsInline
-        className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-      />
+      {project.image ? (
+        <img
+          src={project.image}
+          alt={`${project.title} highlights`}
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      ) : (
+        <video
+          ref={videoRef}
+          src={project.video}
+          poster={project.poster}
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+        />
+      )}
       {/* Subtle overlay for better contrast */}
       <div className="absolute inset-0 bg-gradient-to-t from-black/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
     </div>
   )
 }
 
-function ProjectCard({ project, index }: { project: typeof projects[0]; index: number }) {
-  const CardWrapper = project.youtubeUrl ? 'a' : Link
-  const cardProps = project.youtubeUrl
-    ? { href: project.youtubeUrl, target: "_blank", rel: "noopener noreferrer" }
+function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const externalUrl = project.youtubeUrl ?? project.externalUrl
+  const CardWrapper = externalUrl ? 'a' : Link
+  const cardProps = externalUrl
+    ? { href: externalUrl, target: "_blank", rel: "noopener noreferrer" }
     : { href: `/projects/${project.slug}` }
 
   return (
@@ -251,7 +294,7 @@ export function Work() {
             Our Work
           </h2>
           <p className="text-base sm:text-lg text-black/50 max-w-2xl mx-auto">
-            A selection of projects where we helped crypto teams clarify their message, shape their narrative, and drive real adoption.
+            Teams we've worked with, and what we did for each.
           </p>
         </motion.div>
 

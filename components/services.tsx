@@ -1,53 +1,44 @@
 "use client"
 
-import { Card, CardContent, CardHeader } from "@/components/ui/card"
 import { motion } from "framer-motion"
 import { Lightbulb, Speech, MonitorPlay, Rocket } from "lucide-react"
-import type { ReactNode } from "react"
+import { Newsreader, Spline_Sans_Mono } from "next/font/google"
+import { cn } from "@/lib/utils"
+
+const newsreader = Newsreader({ subsets: ["latin"], weight: ["500"] })
+const splineMono = Spline_Sans_Mono({ subsets: ["latin"], weight: ["400"] })
 
 const services = [
   {
-    icon: <Lightbulb className="size-6" />,
+    icon: <Lightbulb className="size-[22px]" strokeWidth={1.5} />,
     title: "Explainers",
     description:
-      "Clear, structured explanations that turn complex crypto products into simple, memorable ideas. We help users understand what you are building, why it matters, and how it works without jargon or hype.",
+      "We take a complex crypto product and explain it in plain language. What it is, and why anyone should care. No jargon, no hype.",
   },
   {
-    icon: <Speech className="size-6" />,
+    icon: <Speech className="size-[22px]" strokeWidth={1.5} />,
     title: "Communication",
     description:
-      "Clear communication that keeps your story coherent as your product evolves. We help teams express progress, updates, and ideas in a way people can actually follow.",
+      "Products change fast and the story drifts. We keep your updates readable and your message consistent, so people can follow what you're shipping.",
   },
   {
-    icon: <MonitorPlay className="size-6" />,
+    icon: <MonitorPlay className="size-[22px]" strokeWidth={1.5} />,
     title: "Animation",
     description:
-      "Narrative-driven animations and visual explainers that make abstract concepts easy to understand. We use motion to teach, not decorate, helping ideas land faster and stay memorable.",
+      "Short animations that make abstract ideas easier to hold onto. We use motion to teach, not decorate. If a scene doesn't help someone understand, it gets cut.",
   },
   {
-    icon: <Rocket className="size-6" />,
+    icon: <Rocket className="size-[22px]" strokeWidth={1.5} />,
     title: "Branding",
     description:
-      "Positioning, messaging, and launch narratives that shape how your product is understood. We define how you talk about what you are building so users, partners, and the wider ecosystem hear a clear, consistent message.",
+      "How you talk about what you're building. We work out the positioning and the launch story with you, then hold it consistent everywhere it shows up.",
   },
 ]
 
-const CardDecorator = ({ children }: { children: ReactNode }) => (
-  <div
-    aria-hidden
-    className="relative mx-auto size-36 [mask-image:radial-gradient(ellipse_50%_50%_at_50%_50%,#000_70%,transparent_100%)]"
-  >
-    <div className="absolute inset-0 [--border:black] dark:[--border:white] bg-[linear-gradient(to_right,var(--border)_1px,transparent_1px),linear-gradient(to_bottom,var(--border)_1px,transparent_1px)] bg-[size:24px_24px] opacity-10" />
-    <div className="bg-background absolute inset-0 m-auto flex size-12 items-center justify-center border-t border-l">
-      {children}
-    </div>
-  </div>
-)
-
 export function Services() {
   return (
-    <section id="services" className="bg-muted/50 py-16 md:py-32 dark:bg-transparent">
-      <div className="@container mx-auto max-w-6xl px-6">
+    <section id="services" className="bg-white py-16 md:py-32">
+      <div className="mx-auto max-w-6xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -56,11 +47,12 @@ export function Services() {
         >
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Our Expertise</h2>
           <p className="mt-4 text-muted-foreground">
-            Comprehensive communication solutions for crypto teams that want to grow
+            The work we take on for crypto teams, and what each piece is for
           </p>
         </motion.div>
 
-        <Card className="@min-4xl:max-w-full @min-4xl:grid-cols-2 @min-4xl:divide-x @min-4xl:divide-y-0 mx-auto mt-8 grid max-w-sm divide-y overflow-hidden shadow-zinc-950/5 *:text-center md:mt-16">
+        {/* Four-column strip under a bold top rule */}
+        <div className="mt-10 grid grid-cols-1 border-t-2 border-[#1c1a17] sm:grid-cols-2 lg:grid-cols-4 md:mt-16">
           {services.map((service, index) => (
             <motion.div
               key={index}
@@ -68,20 +60,26 @@ export function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: index * 0.1 }}
-              className="group shadow-zinc-950/5"
+              className={cn(
+                "flex flex-col pt-8 pb-8 lg:pb-2",
+                "border-b border-[#eae7e0] lg:border-b-0",
+                "lg:mr-7 lg:border-r lg:border-r-[#eae7e0] lg:pr-7 lg:last:mr-0 lg:last:border-r-0",
+                "sm:max-lg:odd:border-r sm:max-lg:odd:border-r-[#eae7e0] sm:max-lg:odd:pr-7 sm:max-lg:even:pl-7"
+              )}
             >
-              <CardHeader className="pb-3">
-                <CardDecorator>{service.icon}</CardDecorator>
-
-                <h3 className="mt-6 font-medium text-xl">{service.title}</h3>
-              </CardHeader>
-
-              <CardContent>
-                <p className="text-sm text-muted-foreground">{service.description}</p>
-              </CardContent>
+              <div className="mb-10 flex items-baseline justify-between lg:mb-14">
+                <span className={cn(splineMono.className, "text-xs tracking-[0.08em] text-[#b3ac9e]")}>
+                  0{index + 1}
+                </span>
+                <span className="inline-flex translate-y-1 text-[#1c1a17]">{service.icon}</span>
+              </div>
+              <h3 className={cn(newsreader.className, "mb-3 text-2xl leading-[1.15] text-[#1c1a17]")}>
+                {service.title}
+              </h3>
+              <p className="text-sm leading-[1.6] text-[#6f695e] text-pretty">{service.description}</p>
             </motion.div>
           ))}
-        </Card>
+        </div>
       </div>
     </section>
   )

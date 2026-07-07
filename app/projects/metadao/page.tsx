@@ -80,7 +80,7 @@ export default function MetaDAOProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Elevating Web3 governance through strategic content and community engagement
+              MetaDAO runs governance through prediction markets. We made that understandable to people hearing about it for the first time.
             </p>
           </motion.div>
         </div>
@@ -102,7 +102,7 @@ export default function MetaDAOProject() {
               Community Impact
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              See how our content strategy drives engagement and builds community
+              A sample of the posts from this work, and how people responded
             </p>
           </motion.div>
 
@@ -147,9 +147,8 @@ export default function MetaDAOProject() {
                 metadao.link
               </h2>
               <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8">
-                We designed and built a dedicated landing page to explain MetaDAO&apos;s futarchy-based governance system
-                in clear, accessible terms. The site serves as a central hub for new users to understand the project&apos;s
-                unique approach to on-chain decision making.
+                We designed and built a landing page that explains MetaDAO&apos;s futarchy governance in plain terms.
+                New users get one place to start instead of piecing it together from forum posts.
               </p>
               <Link
                 href="https://metadao.link"
@@ -271,7 +270,7 @@ export default function MetaDAOProject() {
               Ready to grow your community and attract real users?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let's create a content strategy that drives real engagement and builds lasting relationships with your audience.
+              If your product takes explaining, that's the work we do. Book a call and tell us what you're building.
             </p>
             <button
               onClick={() => {
