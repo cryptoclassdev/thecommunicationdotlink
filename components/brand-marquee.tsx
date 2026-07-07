@@ -39,6 +39,11 @@ const brands = [
     alt: "OKX exchange logo",
   },
   {
+    name: "Zinc",
+    logo: ASSETS.brands.zinc,
+    alt: "Zinc confidential compute logo",
+  },
+  {
     name: "Fogo",
     logo: ASSETS.brands.fogo,
     alt: "Fogo platform logo",

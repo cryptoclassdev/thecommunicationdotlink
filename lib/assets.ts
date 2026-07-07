@@ -28,6 +28,7 @@ export const ASSETS = {
     magiceden: "/brands/magiceden.png",
     kast: "/brands/kast.svg",
     okx: "/brands/okx.png",
+    zinc: "/brands/zinc.svg",
   },
 
   team: {
