@@ -33,6 +33,16 @@ const projects: Project[] = [
     tags: ["Launch", "Communications"],
   },
   {
+    title: "Jupiter",
+    category: "Video Content, User Onboarding",
+    description:
+      "Creating onboarding videos as part of Jupiter Uplink — tutorials and explainers that walk new users through earning, trading, and staking across the Jupiter ecosystem.",
+    image: "/work/jupiter-uplink.jpg",
+    color: "from-[#00BEF0]/10 to-[#C7F284]/10",
+    slug: "jupiter",
+    tags: ["Video Content", "Onboarding"],
+  },
+  {
     title: "MetaDAO",
     category: "Explainers, Animations, New Project Coverage",
     description:
