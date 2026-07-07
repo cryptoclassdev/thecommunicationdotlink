@@ -37,13 +37,6 @@ const teamMembers = [
     accent: "pink",
   },
   {
-    name: "Luca",
-    role: "Animator",
-    image: ASSETS.team.luca,
-    bio: "An animator and concept artist with a bachelor's in animation and a master's in concept art, previously at Adobe France. Luca makes the short-form animations for projects like MetaDAO and Zcash, in styles that borrow from Family Guy and Rick and Morty. He leads animation on the team.",
-    accent: "blue",
-  },
-  {
     name: "Nicole",
     role: "BD Lead",
     image: ASSETS.team.nicole,
