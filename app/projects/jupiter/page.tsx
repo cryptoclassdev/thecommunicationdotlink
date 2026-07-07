@@ -17,10 +17,10 @@ const tags = [
 const tagStyle = "bg-[#00BEF0]/10 border-[#00BEF0]/20 text-[#0086A8]"
 
 const videos = [
-  { id: "qQ_VCRtKMdo", title: "How to Use DLMM Pools to Earn $ — Meteora Tutorial" },
-  { id: "PzfVXXZcf2A", title: "How to Earn $ by Adding Liquidity — Raydium Tutorial" },
+  { id: "qQ_VCRtKMdo", title: "How to Use DLMM Pools to Earn $ - Meteora Tutorial" },
+  { id: "PzfVXXZcf2A", title: "How to Earn $ by Adding Liquidity - Raydium Tutorial" },
   { id: "rrXsN7-9RNI", title: "Follow Murad Mahmudov NOW or Miss This Next Bitcoin-Level Explosion" },
-  { id: "cxld81X_9n0", title: "Withdrawing from Your Liquidity Pools — Raydium Tutorial" },
+  { id: "cxld81X_9n0", title: "Withdrawing from Your Liquidity Pools - Raydium Tutorial" },
   { id: "GDYkDAIoaxU", title: "Multiply Your JLP APY With Kamino" },
   { id: "RNiSDyoEOxs", title: "Can You Master Leverage Trading with Jupiter Perps?" },
   { id: "-o1EMwUnJxA", title: "This Token's Price Keeps Going Up ..." },
@@ -85,8 +85,7 @@ export default function JupiterProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Creating onboarding videos as part of Jupiter Uplink — helping new users understand and use the
-              Jupiter ecosystem
+              Onboarding videos for the Jupiter Uplink program, made to turn viewers into users
             </p>
           </motion.div>
         </div>
@@ -108,8 +107,7 @@ export default function JupiterProject() {
               Onboarding Videos
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              Tutorials and explainers that walk new users through earning, trading, and staking across the
-              Jupiter ecosystem
+              Step-by-step tutorials for Jupiter&apos;s products, from perps and liquidity pools to JupSOL
             </p>
           </motion.div>
 
@@ -169,8 +167,7 @@ export default function JupiterProject() {
               Jupiter Onchain
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto">
-              The full series lives on the Jupiter Onchain channel, where new videos continue to onboard users
-              into the ecosystem.
+              The full series lives on the Jupiter Onchain channel, and new videos keep coming.
             </p>
             <Link
               href="https://www.youtube.com/@JupiterOnchain"
@@ -208,7 +205,7 @@ export default function JupiterProject() {
               Want video content that turns viewers into users?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let&apos;s create tutorials and explainers that make your product easy to pick up and hard to put down.
+              Tutorials work because nobody reads docs. Book a call and we&apos;ll map out a series for your product.
             </p>
             <button
               onClick={() => {

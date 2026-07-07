@@ -38,7 +38,7 @@ export function Hero() {
             <span className="text-black/80">is where crypto teams find their voice.</span>
             <br className="hidden sm:block" />
             <span className="sm:hidden"> </span>
-            <span className="text-black/60">We turn innovation into clear communication that attracts users.</span>
+            <span className="text-black/60">We explain what you built so people actually use it.</span>
           </p>
 
           {/* Social links - follow Seb's channels */}

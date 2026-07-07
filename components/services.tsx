@@ -10,25 +10,25 @@ const services = [
     icon: <Lightbulb className="size-6" />,
     title: "Explainers",
     description:
-      "Clear, structured explanations that turn complex crypto products into simple, memorable ideas. We help users understand what you are building, why it matters, and how it works without jargon or hype.",
+      "We take a complex crypto product and explain it in plain language. What it is, and why anyone should care. No jargon, no hype.",
   },
   {
     icon: <Speech className="size-6" />,
     title: "Communication",
     description:
-      "Clear communication that keeps your story coherent as your product evolves. We help teams express progress, updates, and ideas in a way people can actually follow.",
+      "Products change fast and the story drifts. We keep your updates readable and your message consistent, so people can follow what you're shipping.",
   },
   {
     icon: <MonitorPlay className="size-6" />,
     title: "Animation",
     description:
-      "Narrative-driven animations and visual explainers that make abstract concepts easy to understand. We use motion to teach, not decorate, helping ideas land faster and stay memorable.",
+      "Short animations that make abstract ideas easier to hold onto. We use motion to teach, not decorate. If a scene doesn't help someone understand, it gets cut.",
   },
   {
     icon: <Rocket className="size-6" />,
     title: "Branding",
     description:
-      "Positioning, messaging, and launch narratives that shape how your product is understood. We define how you talk about what you are building so users, partners, and the wider ecosystem hear a clear, consistent message.",
+      "How you talk about what you're building. We work out the positioning and the launch story with you, then hold it consistent everywhere it shows up.",
   },
 ]
 
@@ -56,7 +56,7 @@ export function Services() {
         >
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Our Expertise</h2>
           <p className="mt-4 text-muted-foreground">
-            Comprehensive communication solutions for crypto teams that want to grow
+            The work we take on for crypto teams, and what each piece is for
           </p>
         </motion.div>
 

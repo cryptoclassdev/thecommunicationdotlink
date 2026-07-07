@@ -83,8 +83,7 @@ export default function ZincProject() {
 
             {/* Subtitle */}
             <p className="text-lg sm:text-xl md:text-2xl text-black/50 leading-relaxed max-w-2xl">
-              Supporting Zinc&apos;s launch on Solana with clear messaging and communications that helped the project
-              hit the ground running
+              We ran communications for Zinc&apos;s launch on Solana. The first month went well.
             </p>
           </motion.div>
         </div>
@@ -128,8 +127,8 @@ export default function ZincProject() {
               The First Month
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              We helped Zinc launch with communications built for clarity and adoption. These are the results one
-              month in — Zinc&apos;s standing across the Solana ecosystem.
+              Zinc launched, and a month later the numbers looked like this. Rankings are across all of Solana,
+              trailing 24 hours.
             </p>
           </motion.div>
 
@@ -144,7 +143,7 @@ export default function ZincProject() {
             >
               <Image
                 src="/work/zinc-rankings.jpg"
-                alt="Where Zinc ranks — standing across the Solana ecosystem after the first month"
+                alt="Where Zinc ranked across Solana one month after launch"
                 width={1080}
                 height={1080}
                 className="w-full h-auto"
@@ -203,7 +202,7 @@ export default function ZincProject() {
               zinc.cash
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto">
-              Confidential compute on Solana, with revenue routed back to holders. See what the project is building.
+              Zinc runs confidential compute on Solana and routes revenue back to holders. The site has the details.
             </p>
             <Link
               href="https://zinc.cash"
@@ -241,7 +240,7 @@ export default function ZincProject() {
               Launching something new?
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-black/50 mb-8 sm:mb-10 max-w-xl mx-auto leading-relaxed">
-              Let&apos;s make sure your launch lands — with messaging that makes your product understood from day one.
+              A launch gets one first impression. Talk to us before the date is set, not after.
             </p>
             <button
               onClick={() => {

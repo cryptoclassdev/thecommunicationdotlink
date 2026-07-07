@@ -26,7 +26,7 @@ const projects: Project[] = [
     title: "Zinc.cash",
     category: "Launch Communications",
     description:
-      "Helping Zinc launch on Solana with clear messaging and launch communications. One month in, Zinc ranked #1 in Arcium confidential compute, #3 in app revenue across Solana, and #2 in revenue routed to holders.",
+      "We ran communications for Zinc's launch on Solana. One month in, Zinc sat at #3 in app revenue across Solana and #1 in confidential compute on Arcium.",
     image: "/work/zinc-miners.jpg",
     color: "from-[#FF7A1A]/10 to-[#FFB347]/10",
     slug: "zinc",
@@ -36,7 +36,7 @@ const projects: Project[] = [
     title: "Jupiter",
     category: "Video Content, User Onboarding",
     description:
-      "Creating onboarding videos as part of Jupiter Uplink — tutorials and explainers that walk new users through earning, trading, and staking across the Jupiter ecosystem.",
+      "Onboarding videos made through the Jupiter Uplink program. Step-by-step tutorials that take a viewer from curious to using Jupiter's products, perps to JupSOL.",
     image: "/work/jupiter-uplink.jpg",
     color: "from-[#00BEF0]/10 to-[#C7F284]/10",
     slug: "jupiter",
@@ -46,7 +46,7 @@ const projects: Project[] = [
     title: "MetaDAO",
     category: "Explainers, Animations, New Project Coverage",
     description:
-      "Helping MetaDAO explain futarchy, governance, and on-chain decision-making through clear explainers, short-form animations, and ecosystem coverage.",
+      "MetaDAO runs governance through prediction markets, which takes some explaining. We made the explainers, plus an animation series that ran across Crypto Twitter.",
     video: ASSETS.videos.workMetadaoThumb,
     poster: ASSETS.posters.metadaoThumb,
     color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
@@ -57,7 +57,7 @@ const projects: Project[] = [
     title: "Meteora",
     category: "Explainers, New User Onboarding",
     description:
-      "Helping Meteora onboard new users through clear explainers and structured onboarding that makes liquidity provisioning and DLMMs easy to understand.",
+      "Explainers and onboarding videos for Meteora. New users learn what a DLMM pool is and how to provide liquidity without wading through docs.",
     video: ASSETS.videos.workMeteora,
     poster: ASSETS.posters.meteoraPoster,
     color: "from-[#FF5722]/10 to-[#9C27B0]/10",
@@ -68,7 +68,7 @@ const projects: Project[] = [
     title: "ZCASH",
     category: "Animations",
     description:
-      "Helping Zcash communicate the importance of privacy through clear explainers, narrative-driven content, and culturally relevant animations.",
+      "Animation work for Zcash. Short pieces that make the case for financial privacy and hold up on a social feed.",
     video: ASSETS.videos.workZcashThumb,
     poster: ASSETS.posters.zcashThumb,
     color: "from-[#F9A825]/10 to-[#FFEB3B]/10",
@@ -79,7 +79,7 @@ const projects: Project[] = [
     title: "Solana Mobile",
     category: "Product Review",
     description:
-      "Providing a detailed, user-focused product review that clearly explains Solana Mobile's hardware, software, and ecosystem experience.",
+      "A full review of the Solana Seeker phone. The hardware, the software, and whether it's worth buying.",
     video: ASSETS.videos.workSolanaMobile,
     poster: ASSETS.posters.seekerThumb,
     color: "from-[#00B8B8]/10 to-[#9B4BFF]/10",
@@ -294,7 +294,7 @@ export function Work() {
             Our Work
           </h2>
           <p className="text-base sm:text-lg text-black/50 max-w-2xl mx-auto">
-            A selection of projects where we helped crypto teams clarify their message, shape their narrative, and drive real adoption.
+            Teams we've worked with, and what we did for each.
           </p>
         </motion.div>
 

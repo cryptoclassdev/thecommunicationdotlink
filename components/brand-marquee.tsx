@@ -56,7 +56,7 @@ export function BrandMarquee() {
       {/* Section header - Miller's Law: chunked information */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 mb-8 sm:mb-10">
         <p className="text-center text-sm sm:text-base font-medium text-black/40 uppercase tracking-wider">
-          Trusted by leading crypto teams
+          Teams we&apos;ve worked with
         </p>
       </div>
 

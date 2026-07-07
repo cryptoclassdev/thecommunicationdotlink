@@ -33,7 +33,7 @@ export function Footer() {
               thecommunication<span className="text-blue-600">.</span>link
             </Link>
             <p className="text-sm sm:text-base text-black/50 leading-relaxed max-w-xs">
-              Your product is powerful. We make it understood, remembered, and adopted.
+              Your product is powerful. We make sure people understand it.
             </p>
             <SocialLinks className="mt-5" />
           </div>
