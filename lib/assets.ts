@@ -20,12 +20,14 @@ export const ASSETS = {
     solana: `${BLOB_BASE}/images/brands/solana-logo.png`,
     metadao: `${BLOB_BASE}/images/brands/metadao.svg`,
     meteora: `${BLOB_BASE}/images/brands/meteora-white.svg`,
-    claynosaurz: `${BLOB_BASE}/images/brands/claynosaurz-logo.svg`,
     jupiter: `${BLOB_BASE}/images/brands/jupiter-logo.svg`,
-    sui: `${BLOB_BASE}/images/brands/sui-logo.jpg`,
     fogo: `${BLOB_BASE}/images/brands/fogo.jpg`,
     validator: `${BLOB_BASE}/images/brands/validator-logo.svg`,
     genzcash: `${BLOB_BASE}/images/brands/genzcash.jpg`,
+    // Local assets in public/brands/
+    magiceden: "/brands/magiceden.png",
+    kast: "/brands/kast.svg",
+    okx: "/brands/okx.png",
   },
 
   team: {

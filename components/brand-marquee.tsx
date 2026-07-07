@@ -19,19 +19,24 @@ const brands = [
     alt: "Meteora DeFi protocol logo",
   },
   {
-    name: "Claynosaurz",
-    logo: ASSETS.brands.claynosaurz,
-    alt: "Claynosaurz NFT collection logo",
-  },
-  {
     name: "Jupiter",
     logo: ASSETS.brands.jupiter,
     alt: "Jupiter aggregator platform logo",
   },
   {
-    name: "Sui",
-    logo: ASSETS.brands.sui,
-    alt: "sui logo",
+    name: "Magic Eden",
+    logo: ASSETS.brands.magiceden,
+    alt: "Magic Eden NFT marketplace logo",
+  },
+  {
+    name: "KAST",
+    logo: ASSETS.brands.kast,
+    alt: "KAST stablecoin money app logo",
+  },
+  {
+    name: "OKX",
+    logo: ASSETS.brands.okx,
+    alt: "OKX exchange logo",
   },
   {
     name: "Fogo",
