@@ -1,6 +1,7 @@
 import type { TweetData } from "@/types/tweet"
+import { METADAO_X_METRICS_BY_TWEET_ID } from "@/data/metadao-x-metrics"
 
-export const METADAO_TWEETS: TweetData[] = [
+const FALLBACK_METADAO_TWEETS: TweetData[] = [
   {
     id: "1948822243896877403",
     author: {
@@ -347,3 +348,20 @@ export const METADAO_TWEETS: TweetData[] = [
     tweetUrl: "https://twitter.com/MetaDAO/status/1983975628803051689",
   },
 ]
+
+export const METADAO_TWEETS: TweetData[] = FALLBACK_METADAO_TWEETS.map((tweet) => {
+  const metrics = METADAO_X_METRICS_BY_TWEET_ID[tweet.id]
+
+  if (!metrics) return tweet
+
+  return {
+    ...tweet,
+    timestamp: metrics.displayDate || tweet.timestamp,
+    engagement: {
+      likes: metrics.likes,
+      replies: metrics.replies,
+      retweets: metrics.retweets,
+      views: metrics.views,
+    },
+  }
+})

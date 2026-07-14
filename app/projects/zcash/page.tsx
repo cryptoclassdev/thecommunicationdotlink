@@ -131,34 +131,6 @@ export default function ZcashProject() {
         </div>
       </section>
 
-      {/* Project Description */}
-      <section className="py-12 sm:py-16 md:py-20 relative">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 tracking-tight">Our Work</h2>
-            <div className="space-y-4 sm:space-y-5">
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                Zcash builds privacy technology, and privacy is a hard thing to make people care about before they
-                need it. Our job was to make the argument watchable.
-              </p>
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                We made short animated pieces for social. Character-driven, styled after the cartoons people already
-                watch, each one carrying a single idea about why financial privacy matters.
-              </p>
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                People share a forty-second cartoon. They do not share a whitepaper. That was the bet, and the
-                pieces travelled.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Social Proof Section */}
       <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">

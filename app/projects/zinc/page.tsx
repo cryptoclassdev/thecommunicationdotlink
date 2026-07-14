@@ -3,7 +3,7 @@
 import { motion } from "framer-motion"
 import Link from "next/link"
 import Image from "next/image"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { cn } from "@/lib/utils"
@@ -16,14 +16,6 @@ const tags = [
 
 // Zinc brand color: #FF7A1A
 const tagStyle = "bg-[#FF7A1A]/10 border-[#FF7A1A]/20 text-[#E05E00]"
-
-const stats = [
-  { rank: "#1", label: "Arcium Computations", detail: "Most confidential compute of any program on the network" },
-  { rank: "#3", label: "Revenue", detail: "App revenue across Solana" },
-  { rank: "#2", label: "Holder Revenue", detail: "Revenue routed to holders" },
-  { rank: "#20", label: "24h Volume", detail: "Trading volume on Meteora" },
-  { rank: "~0.5%", label: "Network Share", detail: "Of all transactions on Solana" },
-]
 
 export default function ZincProject() {
   return (
@@ -123,20 +115,15 @@ export default function ZincProject() {
             transition={{ duration: 0.5 }}
             className="mb-10 sm:mb-12 md:mb-16 text-center"
           >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 tracking-tight">
-              The First Month
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight">
+              See our results after month one.
             </h2>
-            <p className="text-base sm:text-lg md:text-xl text-black/50 max-w-2xl mx-auto">
-              Zinc launched, and a month later the numbers looked like this. Rankings are across all of Solana,
-              trailing 24 hours.
-            </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center">
-            {/* Rankings infographic */}
+          <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5 }}
               className="rounded-2xl sm:rounded-3xl overflow-hidden border border-black/[0.06] shadow-xl shadow-black/[0.05]"
@@ -150,79 +137,7 @@ export default function ZincProject() {
                 unoptimized
               />
             </motion.div>
-
-            {/* Stat cards */}
-            <div className="space-y-3 sm:space-y-4">
-              {stats.map((stat, index) => (
-                <motion.div
-                  key={stat.label}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08, duration: 0.5 }}
-                  className={cn(
-                    "flex items-center gap-4 sm:gap-5 p-4 sm:p-5",
-                    "bg-white rounded-xl sm:rounded-2xl",
-                    "border border-black/[0.06]",
-                    "hover:border-[#FF7A1A]/30 hover:shadow-lg hover:shadow-[#FF7A1A]/[0.06]",
-                    "transition-all duration-300"
-                  )}
-                >
-                  <span className="text-2xl sm:text-3xl font-bold text-[#E05E00] w-20 sm:w-24 flex-shrink-0">
-                    {stat.rank}
-                  </span>
-                  <div>
-                    <div className="font-semibold text-sm sm:text-base text-black">{stat.label}</div>
-                    <div className="text-xs sm:text-sm text-black/50">{stat.detail}</div>
-                  </div>
-                </motion.div>
-              ))}
-            </div>
           </div>
-        </div>
-      </section>
-
-      {/* zinc.cash Section */}
-      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className={cn(
-              "inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5",
-              "text-xs sm:text-sm font-medium border",
-              tagStyle
-            )}>
-              Website
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 tracking-tight">
-              zinc.cash
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto">
-              Zinc runs confidential compute on Solana and routes revenue back to holders. The site has the details.
-            </p>
-            <Link
-              href="https://zinc.cash"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "inline-flex items-center gap-2",
-                "px-5 sm:px-6 py-2.5 sm:py-3",
-                "bg-black text-white rounded-xl",
-                "font-semibold text-sm sm:text-base",
-                "hover:bg-black/90 active:scale-[0.98]",
-                "transition-all duration-200",
-                "shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/15",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
-              )}
-            >
-              Visit Website
-              <ExternalLink className="w-4 h-4" />
-            </Link>
-          </motion.div>
         </div>
       </section>
 

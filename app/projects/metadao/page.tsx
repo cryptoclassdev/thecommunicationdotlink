@@ -2,16 +2,13 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowLeft, Quote, ExternalLink } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { CustomTweetCard } from "@/components/custom-tweet-card"
 import { METADAO_TWEETS } from "@/data/metadao-tweets"
+import { METADAO_X_BASELINE, METADAO_X_PORTFOLIO_SUMMARY } from "@/data/metadao-x-metrics"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
-import { SafariMockup } from "@/components/ui/safari-mockup"
-import { IPhoneMockup } from "@/components/ui/iphone-mockup"
 import { cn } from "@/lib/utils"
-import { ASSETS } from "@/lib/assets"
 
 const tags = [
   { label: "Content Strategy" },
@@ -21,6 +18,13 @@ const tags = [
 
 // MetaDAO brand color: #FF6B6B
 const tagStyle = "bg-[#FF6B6B]/10 border-[#FF6B6B]/20 text-[#FF6B6B]"
+const percentFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 })
+const impressionIncreasePercent =
+  METADAO_X_BASELINE.averages.views > 0
+    ? ((METADAO_X_PORTFOLIO_SUMMARY.averages.views - METADAO_X_BASELINE.averages.views) /
+        METADAO_X_BASELINE.averages.views) *
+      100
+    : 0
 
 export default function MetaDAOProject() {
   return (
@@ -106,6 +110,27 @@ export default function MetaDAOProject() {
             </p>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className={cn(
+              "mb-8 sm:mb-10 p-5 sm:p-7 md:p-8",
+              "rounded-lg border border-[#1D9BF0]/15",
+              "bg-[#1D9BF0]/[0.035]"
+            )}
+          >
+            <div className="max-w-3xl">
+              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-black">
+                Average impressions went up by{" "}
+                <span className="text-[#1D9BF0]">
+                  {percentFormatter.format(impressionIncreasePercent)}%
+                </span>
+              </h3>
+            </div>
+          </motion.div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
             {METADAO_TWEETS.map((tweet, index) => (
               <motion.div
@@ -119,140 +144,6 @@ export default function MetaDAOProject() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* metadao.link Section */}
-      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-[40vw] h-[40vw] bg-purple-50/50 rounded-full blur-[150px] pointer-events-none" />
-
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 lg:gap-16 items-center">
-            {/* Text Content */}
-            <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="order-2 lg:order-1"
-            >
-              <span className={cn(
-                "inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5",
-                "text-xs sm:text-sm font-medium border",
-                "bg-purple-50 border-purple-100/80 text-purple-600"
-              )}>
-                Website
-              </span>
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 tracking-tight">
-                metadao.link
-              </h2>
-              <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8">
-                We designed and built a landing page that explains MetaDAO&apos;s futarchy governance in plain terms.
-                New users get one place to start instead of piecing it together from forum posts.
-              </p>
-              <Link
-                href="https://metadao.link"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={cn(
-                  "inline-flex items-center gap-2",
-                  "px-5 sm:px-6 py-2.5 sm:py-3",
-                  "bg-black text-white rounded-xl",
-                  "font-semibold text-sm sm:text-base",
-                  "hover:bg-black/90 active:scale-[0.98]",
-                  "transition-all duration-200",
-                  "shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/15",
-                  "focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
-                )}
-              >
-                Visit Website
-                <ExternalLink className="w-4 h-4" />
-              </Link>
-            </motion.div>
-
-            {/* Mockup */}
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="order-1 lg:order-2"
-            >
-              {/* Desktop: Safari mockup */}
-              <div className="hidden sm:block">
-                <SafariMockup
-                  image={ASSETS.projects.metadaoHubScreenshot}
-                  className="w-full"
-                />
-              </div>
-
-              {/* Mobile: iPhone mockup */}
-              <div className="flex justify-center sm:hidden">
-                <IPhoneMockup scale={0.65}>
-                  <Image
-                    src={ASSETS.projects.metadaoLinkMobilePreview}
-                    alt="metadao.link mobile preview"
-                    fill
-                    className="object-cover object-top"
-                  />
-                </IPhoneMockup>
-              </div>
-            </motion.div>
-          </div>
-        </div>
-      </section>
-
-      {/* Testimonial Section */}
-      <section className="py-12 sm:py-16 md:py-20 relative">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <div className="relative">
-              {/* Quote Icon */}
-              <div className="absolute -top-2 sm:-top-3 -left-2 sm:-left-4 md:-left-6">
-                <Quote className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 text-blue-100 fill-blue-100" />
-              </div>
-
-              {/* Testimonial Content */}
-              <div className={cn(
-                "relative p-6 sm:p-8 md:p-10 lg:p-12",
-                "bg-gradient-to-br from-blue-50/40 to-cyan-50/40",
-                "rounded-2xl sm:rounded-3xl",
-                "border border-blue-100/40"
-              )}>
-                <blockquote className="text-base sm:text-lg md:text-xl text-black/70 leading-relaxed mb-6 sm:mb-8">
-                  I've known Kollan for many years, and MetaDAO has always been one of the most challenging projects in
-                  crypto to communicate clearly. The challenge isn't marketing, it's depth. MetaDAO is building
-                  governance around futarchy and on-chain decision making driven by markets and incentives, ideas that
-                  are unfamiliar even to experienced crypto users. Our work focused on making this legible through clear
-                  explainers and educational content, supported by an animation series that ran as an awareness campaign
-                  across Crypto Twitter to surface the ideas and spark curiosity. As the product matured, MetaDAO
-                  emerged as one of the few projects in 2025 to gain attention for shipping real infrastructure, with
-                  growing interest from teams exploring launches through its framework.
-                </blockquote>
-
-                {/* Author - Law of Proximity: grouped elements */}
-                <div className="flex items-center gap-3 sm:gap-4">
-                  <div className="w-12 h-12 sm:w-14 sm:h-14 rounded-full overflow-hidden relative flex-shrink-0 border border-black/[0.06]">
-                    <Image
-                      src={ASSETS.team.seb}
-                      alt="Sebastian Montgomery"
-                      fill
-                      className="object-cover"
-                    />
-                  </div>
-                  <div>
-                    <div className="font-semibold text-base sm:text-lg text-black">Sebastian Montgomery</div>
-                    <div className="text-sm sm:text-base text-black/50">Founder, thecommunication.link</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </div>
       </section>
 

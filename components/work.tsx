@@ -6,6 +6,8 @@ import { useRef, useEffect, useState } from "react"
 import { cn } from "@/lib/utils"
 import { ArrowUpRight } from "lucide-react"
 import { ASSETS } from "@/lib/assets"
+import { JUPITER_FEATURED_LIFT } from "@/data/jupiter-youtube"
+import { METADAO_X_BASELINE, METADAO_X_PORTFOLIO_SUMMARY } from "@/data/metadao-x-metrics"
 
 type Project = {
   title: string
@@ -17,9 +19,25 @@ type Project = {
   color: string
   slug: string
   tags: string[]
+  hideDescription?: boolean
+  stat?: {
+    prefix: string
+    value: string
+    suffix?: string
+    color: string
+  }
   youtubeUrl?: string
   externalUrl?: string
 }
+
+const liftFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 })
+const percentFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 })
+const metadaoImpressionIncrease =
+  METADAO_X_BASELINE.averages.views > 0
+    ? ((METADAO_X_PORTFOLIO_SUMMARY.averages.views - METADAO_X_BASELINE.averages.views) /
+        METADAO_X_BASELINE.averages.views) *
+      100
+    : 0
 
 const projects: Project[] = [
   {
@@ -31,6 +49,13 @@ const projects: Project[] = [
     color: "from-[#FF7A1A]/10 to-[#FFB347]/10",
     slug: "zinc",
     tags: ["Launch", "Communications"],
+    hideDescription: true,
+    stat: {
+      prefix: "Reached",
+      value: "#3",
+      suffix: "for app revenue across Solana during our campaign",
+      color: "text-[#FF7A1A]",
+    },
   },
   {
     title: "Jupiter",
@@ -41,6 +66,13 @@ const projects: Project[] = [
     color: "from-[#00BEF0]/10 to-[#C7F284]/10",
     slug: "jupiter",
     tags: ["Video Content", "Onboarding"],
+    hideDescription: true,
+    stat: {
+      prefix: "Video performed",
+      value: `${liftFormatter.format(JUPITER_FEATURED_LIFT)}x`,
+      suffix: "higher than the channel average",
+      color: "text-[#FF0000]",
+    },
   },
   {
     title: "MetaDAO",
@@ -52,6 +84,12 @@ const projects: Project[] = [
     color: "from-[#FF4949]/10 to-[#FF6B6B]/10",
     slug: "metadao",
     tags: ["Explainers", "Animations", "Coverage"],
+    hideDescription: true,
+    stat: {
+      prefix: "Impressions increased by",
+      value: `${percentFormatter.format(metadaoImpressionIncrease)}%`,
+      color: "text-[#1D9BF0]",
+    },
   },
   {
     title: "Meteora",
@@ -227,11 +265,6 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
             />
 
             <div className="relative z-10">
-              {/* Category label */}
-              <span className="inline-block text-xs sm:text-sm font-medium text-black/40 mb-3 sm:mb-4 uppercase tracking-wider">
-                {project.category}
-              </span>
-
               {/* Title with arrow indicator */}
               <div className="flex items-start gap-3 mb-4 sm:mb-5">
                 <h3 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-black group-hover:text-black/90 transition-colors">
@@ -240,10 +273,23 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
                 <ArrowUpRight className="w-5 h-5 sm:w-6 sm:h-6 mt-1 sm:mt-2 text-black/30 group-hover:text-black/60 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300 flex-shrink-0" />
               </div>
 
-              {/* Description - optimal reading width */}
-              <p className="text-sm sm:text-base text-black/60 leading-relaxed mb-5 sm:mb-6 max-w-md">
-                {project.description}
-              </p>
+              {!project.hideDescription && (
+                <p className="text-sm sm:text-base text-black/60 leading-relaxed mb-5 sm:mb-6 max-w-md">
+                  {project.description}
+                </p>
+              )}
+
+              {project.stat && (
+                <div className="mb-5 sm:mb-6 border-l-2 border-black/[0.08] pl-4">
+                  <p className="text-xl sm:text-2xl font-bold tracking-tight text-black leading-tight">
+                    {project.stat.prefix}{" "}
+                    <span className={cn("font-black", project.stat.color)}>
+                      {project.stat.value}
+                    </span>
+                    {project.stat.suffix ? ` ${project.stat.suffix}` : ""}
+                  </p>
+                </div>
+              )}
 
               {/* Tags - Fitts's Law: adequate touch targets */}
               <div className="flex flex-wrap items-center gap-2">

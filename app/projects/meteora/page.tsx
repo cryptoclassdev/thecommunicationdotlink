@@ -114,34 +114,6 @@ export default function MeteoraProject() {
         </div>
       </section>
 
-      {/* Project Description */}
-      <section className="py-12 sm:py-16 md:py-20 relative">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-6 sm:mb-8 tracking-tight">Our Work</h2>
-            <div className="space-y-4 sm:space-y-5">
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                Meteora runs Dynamic Liquidity Market Makers, or DLMMs, on Solana. They&apos;re powerful, and they&apos;re
-                confusing the first time you meet one. Meteora brought us in to fix the second part.
-              </p>
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                We made step-by-step video tutorials that take a new user from zero to their first pool. What a DLMM
-                actually is, how to put money in, and how to take it back out again.
-              </p>
-              <p className="text-base sm:text-lg text-black/60 leading-relaxed">
-                The videos now sit as a standing library. Someone lands on Meteora, gets stuck, watches one, and gets
-                unstuck. That&apos;s the job.
-              </p>
-            </div>
-          </motion.div>
-        </div>
-      </section>
-
       {/* Video Gallery Section */}
       <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-[50vw] h-[50vw] bg-blue-50/50 rounded-full blur-[150px] pointer-events-none" />

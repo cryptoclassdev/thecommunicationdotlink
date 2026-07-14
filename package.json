@@ -6,6 +6,8 @@
     "build": "next build",
     "dev": "next dev",
     "lint": "eslint .",
+    "metrics:metadao:estimate": "node scripts/fetch-metadao-x-metrics.mjs estimate",
+    "metrics:metadao:fetch": "node scripts/fetch-metadao-x-metrics.mjs fetch",
     "start": "next start"
   },
   "dependencies": {

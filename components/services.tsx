@@ -46,9 +46,6 @@ export function Services() {
           className="text-center"
         >
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">Our Expertise</h2>
-          <p className="mt-4 text-muted-foreground">
-            The work we take on for crypto teams, and what each piece is for
-          </p>
         </motion.div>
 
         {/* Four-column strip under a bold top rule */}

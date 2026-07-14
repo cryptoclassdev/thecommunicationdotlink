@@ -2,10 +2,15 @@
 
 import { motion } from "framer-motion"
 import Link from "next/link"
-import { ArrowLeft, ExternalLink } from "lucide-react"
+import { ArrowLeft } from "lucide-react"
 import { Footer } from "@/components/footer"
 import { Navbar } from "@/components/navbar"
 import { cn } from "@/lib/utils"
+import {
+  JUPITER_CHANNEL_AVERAGE_VIEWS,
+  JUPITER_FEATURED_LIFT,
+  JUPITER_VIDEOS,
+} from "@/data/jupiter-youtube"
 
 const tags = [
   { label: "Video Content" },
@@ -16,16 +21,8 @@ const tags = [
 // Jupiter brand colors: cyan #00BEF0 / lime #C7F284
 const tagStyle = "bg-[#00BEF0]/10 border-[#00BEF0]/20 text-[#0086A8]"
 
-const videos = [
-  { id: "qQ_VCRtKMdo", title: "How to Use DLMM Pools to Earn $ - Meteora Tutorial" },
-  { id: "PzfVXXZcf2A", title: "How to Earn $ by Adding Liquidity - Raydium Tutorial" },
-  { id: "rrXsN7-9RNI", title: "Follow Murad Mahmudov NOW or Miss This Next Bitcoin-Level Explosion" },
-  { id: "cxld81X_9n0", title: "Withdrawing from Your Liquidity Pools - Raydium Tutorial" },
-  { id: "GDYkDAIoaxU", title: "Multiply Your JLP APY With Kamino" },
-  { id: "RNiSDyoEOxs", title: "Can You Master Leverage Trading with Jupiter Perps?" },
-  { id: "-o1EMwUnJxA", title: "This Token's Price Keeps Going Up ..." },
-  { id: "zzkA-znmJVU", title: "Why is JupSOL Token So Special?" },
-]
+const viewFormatter = new Intl.NumberFormat("en-US")
+const liftFormatter = new Intl.NumberFormat("en-US", { maximumFractionDigits: 1 })
 
 export default function JupiterProject() {
   return (
@@ -111,8 +108,39 @@ export default function JupiterProject() {
             </p>
           </motion.div>
 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+            className="mb-8 sm:mb-10 border-y border-black/[0.08] py-5 sm:py-6"
+          >
+            <div className="max-w-3xl mx-auto text-center">
+              <p className="text-xs sm:text-sm font-medium uppercase tracking-wider text-black/35">
+                Performance benchmark
+              </p>
+              <p className="mt-3 text-3xl sm:text-5xl md:text-6xl font-black tracking-tight text-black leading-tight">
+                Featured Uplink videos average{" "}
+                <span className="text-[#FF0000]">{liftFormatter.format(JUPITER_FEATURED_LIFT)}x</span> the channel average
+              </p>
+              <div className="mt-5 grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-8 items-center">
+                <div>
+                  <p className="text-sm sm:text-base text-black/40">Jupiter Onchain average</p>
+                  <p className="mt-1 text-2xl sm:text-3xl font-bold tracking-tight text-black/65">
+                    {viewFormatter.format(JUPITER_CHANNEL_AVERAGE_VIEWS)} views
+                  </p>
+                </div>
+                <div>
+                  <p className="text-xl sm:text-2xl font-bold tracking-tight text-black">
+                    See how the videos performed below.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
-            {videos.map((video, index) => (
+            {JUPITER_VIDEOS.map((video, index) => (
               <motion.div
                 key={video.id}
                 initial={{ opacity: 0, y: 20 }}
@@ -140,54 +168,19 @@ export default function JupiterProject() {
                   <h3 className="text-sm sm:text-base font-semibold text-black leading-snug">
                     {video.title}
                   </h3>
+                  <p className="mt-3 text-sm sm:text-base font-semibold text-black/45">
+                    <span className="text-2xl sm:text-3xl font-black tracking-tight text-[#FF0000]">
+                      {viewFormatter.format(video.views)}
+                    </span>{" "}
+                    views
+                  </p>
+                  <p className="mt-1 text-xs sm:text-sm font-semibold text-[#FF0000]/80">
+                    {liftFormatter.format(video.views / JUPITER_CHANNEL_AVERAGE_VIEWS)}x channel average
+                  </p>
                 </div>
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-
-      {/* Channel Section */}
-      <section className="py-12 sm:py-16 md:py-20 relative overflow-hidden">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 relative z-10 text-center">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className={cn(
-              "inline-block px-3 sm:px-4 py-1.5 sm:py-2 rounded-full mb-4 sm:mb-5",
-              "text-xs sm:text-sm font-medium border",
-              tagStyle
-            )}>
-              YouTube
-            </span>
-            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-5 tracking-tight">
-              Jupiter Onchain
-            </h2>
-            <p className="text-base sm:text-lg md:text-xl text-black/50 leading-relaxed mb-6 sm:mb-8 max-w-xl mx-auto">
-              The full series lives on the Jupiter Onchain channel, and new videos keep coming.
-            </p>
-            <Link
-              href="https://www.youtube.com/@JupiterOnchain"
-              target="_blank"
-              rel="noopener noreferrer"
-              className={cn(
-                "inline-flex items-center gap-2",
-                "px-5 sm:px-6 py-2.5 sm:py-3",
-                "bg-black text-white rounded-xl",
-                "font-semibold text-sm sm:text-base",
-                "hover:bg-black/90 active:scale-[0.98]",
-                "transition-all duration-200",
-                "shadow-md shadow-black/10 hover:shadow-lg hover:shadow-black/15",
-                "focus:outline-none focus-visible:ring-2 focus-visible:ring-black/50 focus-visible:ring-offset-2"
-              )}
-            >
-              Visit Channel
-              <ExternalLink className="w-4 h-4" />
-            </Link>
-          </motion.div>
         </div>
       </section>
 
